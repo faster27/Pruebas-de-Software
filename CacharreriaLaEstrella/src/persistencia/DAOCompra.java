@@ -85,12 +85,12 @@ public class DAOCompra {
 		}
 	}
     
-    public static void GuardarCompraProducto(Compra compra) {
+    public static void GuardarCompraProducto(Compra compra, String FechaVencimiento, String FechaAviso) {
 
 		try {
 
 			// ARMA LA SENTENCIA DE INSERCCION
-			String consultaSQL = "INSERT INTO compraproducto (codigoproducto,codigocompra,preciounidadcompra,cantidad) VALUES (?,?,?,?)";
+			String consultaSQL = "INSERT INTO compraproducto (codigoproducto,codigocompra,preciounidadcompra,cantidad,fechavencimiento,fechaaviso) VALUES (?,?,?,?,?,?)";
 
 			PreparedStatement ps = conexion.prepareStatement(consultaSQL);
 
@@ -100,6 +100,8 @@ public class DAOCompra {
 			ps.setLong(2, compra.getcodigoCompra());
                         ps.setDouble(3, compra.getPrecioCompraProducto());
 			ps.setLong(4, compra.getCantidad());
+                        ps.setString(5, FechaVencimiento);
+                        ps.setString(6, FechaAviso);
                         
                         
                         

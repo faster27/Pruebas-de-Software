@@ -64,6 +64,10 @@ public class GUICompra extends javax.swing.JFrame {
         jButtonAñadirCompraProducto = new javax.swing.JButton();
         jButtonFinalizarCompra = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField1FechaVencimiento = new javax.swing.JTextField();
+        jTextField2FechaAviso = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -100,7 +104,7 @@ public class GUICompra extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2TablaCompras);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 268, 573, 109));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 268, 700, 109));
 
         jButtonRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jButtonRegresar.setText("Regresar");
@@ -160,7 +164,7 @@ public class GUICompra extends javax.swing.JFrame {
                 jButtonAñadirCompraProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, -1, -1));
+        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
 
         jButtonFinalizarCompra.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jButtonFinalizarCompra.setText("Finalizar compra");
@@ -169,14 +173,22 @@ public class GUICompra extends javax.swing.JFrame {
                 jButtonFinalizarCompraActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonFinalizarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, -1));
+        getContentPane().add(jButtonFinalizarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/640-6400983_0-carrito-de-compras-rosado_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 190, 180));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 190, 180));
+
+        jLabel8.setText("Fecha de vencimiento");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, 20));
+
+        jLabel10.setText("Fecha de Aviso");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
+        getContentPane().add(jTextField1FechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 110, -1));
+        getContentPane().add(jTextField2FechaAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 110, -1));
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 440));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 440));
 
         pack();
         setLocationRelativeTo(null);
@@ -243,9 +255,12 @@ public class GUICompra extends javax.swing.JFrame {
             nuevaCompra.setFecha((String) jTableTablaCompras1.getValueAt(i, 4));
             nuevaCompra.setCodigoProducto(Integer.parseInt((String) jTableTablaCompras1.getValueAt(i, 6)));
             
+            String FechaVencimiento= jTextField1FechaVencimiento.getText();
+            String FechaAviso= jTextField2FechaAviso.getText();
+            
             DAOCompra.conexion();
            
-            DAOCompra.GuardarCompraProducto(nuevaCompra);
+            DAOCompra.GuardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso);
             DAOProducto.conexion();
             int PrecioVentaActual= DAOProducto.consultarPrecioVenta(nuevaCompra.getCodigoProducto());
             int CantidadStockActual=DAOProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
@@ -309,19 +324,23 @@ public class GUICompra extends javax.swing.JFrame {
     private javax.swing.JButton jButtonFinalizarCompra;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2TablaCompras;
     private javax.swing.JTextField jTextField1CodigoCompra;
+    private javax.swing.JTextField jTextField1FechaVencimiento;
     private javax.swing.JTextField jTextField1codigoproducto;
+    private javax.swing.JTextField jTextField2FechaAviso;
     private javax.swing.JTextField jTextField2PrecioDeCompra;
     private javax.swing.JTextField jTextField3Cantidad;
     private javax.swing.JTextField jTextField4NombreProducto;
