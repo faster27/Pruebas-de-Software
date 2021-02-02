@@ -5,6 +5,9 @@
  */
 package vista;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import persistencia.DAOInformes;
@@ -21,6 +24,10 @@ public class GUIInformes extends javax.swing.JFrame {
      */
     public GUIInformes() {
         initComponents();
+    }
+    
+    public void guardaTabla(){
+       
     }
 
     /**
@@ -151,7 +158,7 @@ public class GUIInformes extends javax.swing.JFrame {
             jTable1.setValueAt(ventas.get(i), i ,1);
         }
         
-         
+         guardarTabla(jTextField1FechaUno.getText(), jTextField2FechaDos.getText());
     }//GEN-LAST:event_jButton1ConsultarActionPerformed
 
     private void jButtonConsultarStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarStockActionPerformed
@@ -246,4 +253,36 @@ public class GUIInformes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1FechaUno;
     private javax.swing.JTextField jTextField2FechaDos;
     // End of variables declaration//GEN-END:variables
+
+    private void guardarTabla(String fecha1, String fecha2) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            try {
+
+            String sucursalesCSVFile = "src/Informe de ventas.txt";
+            BufferedWriter bfw = new BufferedWriter(new FileWriter(sucursalesCSVFile ));
+            bfw.write("Informe de ventas "+fecha1+" hasta "+fecha2+"");
+            bfw.write("\n");
+            bfw.write("\n");
+            bfw.write("Categoria     |     ValorTotalVenta");
+            bfw.write("\n");
+            for (int i = 0 ; i < jTable1.getRowCount(); i++) //realiza un barrido por filas.
+            {
+                for(int j = 0 ; j < jTable1.getColumnCount();j++) //realiza un barrido por columnas.
+                {
+                    bfw.write(String.valueOf(jTable1.getValueAt(i,j)));
+                    if (j < jTable1.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
+                        bfw.write("     |     ");
+                    }else{
+                    bfw.write(".");
+                    }
+                }
+                bfw.newLine(); //inserta nueva linea.
+            }
+
+            bfw.close(); //cierra archivo!
+            System.out.println("El archivo fue salvado correctamente!");
+        } catch (IOException e) {
+            System.out.println("ERROR: Ocurrio un problema al salvar el archivo!" + e.getMessage());
+        }
+    }
 }
