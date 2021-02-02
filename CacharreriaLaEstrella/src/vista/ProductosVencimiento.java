@@ -60,6 +60,11 @@ public class ProductosVencimiento extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1Regresar.setText("Regresar");
+        jButton1Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1RegresarActionPerformed(evt);
+            }
+        });
 
         jButton1Consultar.setText("Consultar");
         jButton1Consultar.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +148,11 @@ public class ProductosVencimiento extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ConsultarActionPerformed
+
+    private void jButton1RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1RegresarActionPerformed
+        // TODO add your handling code here:
+          this.setVisible(false);
+    }//GEN-LAST:event_jButton1RegresarActionPerformed
 
     /**
      * @param args the command line arguments
