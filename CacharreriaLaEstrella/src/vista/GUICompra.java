@@ -251,20 +251,21 @@ public class GUICompra extends javax.swing.JFrame {
             
            
             
-            System.out.println(jTableTablaCompras1.getValueAt(i, 6));
+            
             
             nuevaCompra.setcodigoCompra((int) jTableTablaCompras1.getValueAt(i, 0));
-            nuevaCompra.setPrecioCompraProducto((double) jTableTablaCompras1.getValueAt(i, 3));
             nuevaCompra.setCantidad((int) jTableTablaCompras1.getValueAt(i, 2));
+            nuevaCompra.setPrecioCompraProducto((double) jTableTablaCompras1.getValueAt(i, 3));
             nuevaCompra.setFecha((String) jTableTablaCompras1.getValueAt(i, 4));
             nuevaCompra.setCodigoProducto(Integer.parseInt((String) jTableTablaCompras1.getValueAt(i, 6)));
             
             String FechaVencimiento= (String) jTableTablaCompras1.getValueAt(i, 7);
             String FechaAviso= (String) jTableTablaCompras1.getValueAt(i, 8);
+            double TotalVenta=(double) jTableTablaCompras1.getValueAt(i, 5);
             
             DAOCompra.conexion();
            
-            DAOCompra.GuardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso);
+            DAOCompra.GuardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso,TotalVenta);
             DAOProducto.conexion();
             int PrecioVentaActual= DAOProducto.consultarPrecioVenta(nuevaCompra.getCodigoProducto());
             int CantidadStockActual=DAOProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
