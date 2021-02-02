@@ -64,8 +64,8 @@ public class GUIVentas extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextFieldPrecioVenta = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton3Vender = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +88,7 @@ public class GUIVentas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1ProductosVenta);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 284, 560, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 560, 110));
 
         jButtonRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jButtonRegresar.setText("Regresar");
@@ -151,7 +151,7 @@ public class GUIVentas extends javax.swing.JFrame {
                 jButton2AñadirProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2AñadirProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, -1));
+        getContentPane().add(jButton2AñadirProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, 30));
         getContentPane().add(jTextFieldNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
@@ -169,17 +169,17 @@ public class GUIVentas extends javax.swing.JFrame {
         jLabel9.setText("jLabel9");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 280, 190));
 
-        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 450));
-
         jButton3Vender.setText("Vender");
         jButton3Vender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3VenderActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3Vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, -1));
+        getContentPane().add(jButton3Vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 130, 30));
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 450));
 
         pack();
         setLocationRelativeTo(null);

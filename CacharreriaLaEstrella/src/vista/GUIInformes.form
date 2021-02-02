@@ -122,11 +122,8 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="2">
-                <Column editable="true" title="Categoria" type="java.lang.Object">
-                  <Data value="comida"/>
-                  <Data value="frutas"/>
-                </Column>
+              <Table columnCount="2" rowCount="0">
+                <Column editable="true" title="Categoria" type="java.lang.Object"/>
                 <Column editable="true" title="Total Vendido" type="java.lang.Object"/>
               </Table>
             </Property>
@@ -166,7 +163,7 @@
         <Component class="javax.swing.JTable" name="jTable2">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="4">
+              <Table columnCount="2" rowCount="0">
                 <Column editable="true" title="producto" type="java.lang.Object"/>
                 <Column editable="true" title="stock" type="java.lang.Object"/>
               </Table>

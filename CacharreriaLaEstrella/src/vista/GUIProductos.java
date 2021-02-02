@@ -108,20 +108,20 @@ public class GUIProductos extends javax.swing.JFrame {
                 jButtonRegistrarProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        getContentPane().add(jButtonRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, -1, -1));
 
         jLabelCategoria.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabelCategoria.setText("Categoria");
-        getContentPane().add(jLabelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 243, -1, -1));
+        getContentPane().add(jLabelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jComboBoxCategoria.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "frutas", "comida", "bebidas", "medicamentos" }));
+        jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aseo Personal", "Aseo Hogar ", "Bebidas", "Bisuteria", "Jugueteria", "Ferreteria", "Snacks", "Mascotas", "Medicamentos", "Papeleria" }));
         jComboBoxCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 241, 98, 20));
+        getContentPane().add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 98, 20));
 
         jButtonAgregarProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jButtonAgregarProducto.setText("Agregar Producto");
@@ -130,7 +130,7 @@ public class GUIProductos extends javax.swing.JFrame {
                 jButtonAgregarProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        getContentPane().add(jButtonAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/680-6808809_plan-web-tienda-virtual-productos-dibujos-hd-png_opt.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 300, 220));

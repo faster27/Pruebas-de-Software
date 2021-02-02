@@ -91,11 +91,11 @@ public class GUICompra extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo Compra", "Nombre Producto", "Cantidad", "Precio Compra", "Fecha", "Precio neto", "codigoProducto"
+                "Codigo Compra", "Nombre Producto", "Cantidad", "Precio Compra", "Fecha", "Precio neto", "codigoProducto", "Fecha Vencimiento", "Fecha Aviso"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -197,7 +197,7 @@ public class GUICompra extends javax.swing.JFrame {
     private void jButtonAñadirCompraProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCompraProductoActionPerformed
         // TODO add your handling code here:
         DefaultTableModel modelo=(DefaultTableModel) jTable2TablaCompras.getModel(); 
-        Object [] fila=new Object[7];
+        Object [] fila=new Object[9];
         
         fila[0]=Integer.parseInt(jTextField1CodigoCompra.getText()); 
 
@@ -212,6 +212,10 @@ public class GUICompra extends javax.swing.JFrame {
         fila[5]=Double.parseDouble(jTextField2PrecioDeCompra.getText())*Integer.parseInt(jTextField3Cantidad.getText());
         
         fila[6]= jTextField1codigoproducto.getText();
+        
+        fila[7]=jTextField1FechaVencimiento.getText();
+         
+        fila[8]=jTextField2FechaAviso.getText();
         
  
         
@@ -255,8 +259,8 @@ public class GUICompra extends javax.swing.JFrame {
             nuevaCompra.setFecha((String) jTableTablaCompras1.getValueAt(i, 4));
             nuevaCompra.setCodigoProducto(Integer.parseInt((String) jTableTablaCompras1.getValueAt(i, 6)));
             
-            String FechaVencimiento= jTextField1FechaVencimiento.getText();
-            String FechaAviso= jTextField2FechaAviso.getText();
+            String FechaVencimiento= (String) jTableTablaCompras1.getValueAt(i, 7);
+            String FechaAviso= (String) jTableTablaCompras1.getValueAt(i, 8);
             
             DAOCompra.conexion();
            

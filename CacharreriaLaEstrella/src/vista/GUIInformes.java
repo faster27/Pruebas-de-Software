@@ -6,6 +6,7 @@
 package vista;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import persistencia.DAOInformes;
 
 
@@ -82,8 +83,7 @@ public class GUIInformes extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"comida", null},
-                {"frutas", null}
+
             },
             new String [] {
                 "Categoria", "Total Vendido"
@@ -95,10 +95,7 @@ public class GUIInformes extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "producto", "stock"
@@ -129,16 +126,29 @@ public class GUIInformes extends javax.swing.JFrame {
 
     private void jButton1ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarActionPerformed
         // TODO add your handling code here:
-        ArrayList<Integer> Resultadoventas = new ArrayList<>();
+        ArrayList<Object> Resultadoventas = new ArrayList<>();
+        ArrayList<String> Categorias = new ArrayList<>();
+        ArrayList<Integer> ventas = new ArrayList<>();
         
         DAOInformes.conexion();
         Resultadoventas=DAOInformes.ConsultarInformeCategorias(jTextField1FechaUno.getText(), jTextField2FechaDos.getText());
+        
+      
+        
+        Categorias = (ArrayList<String>) Resultadoventas.get(0);
+        ventas =(ArrayList<Integer>) (Resultadoventas.get(1));
+        
         int i;
        
-        for (i=0;i<Resultadoventas.size();i++){
+        for (i=0;i<Categorias.size();i++){
+             DefaultTableModel modelo= (DefaultTableModel) jTable1.getModel();
+
+            modelo.addRow(new Object[]{"",""});
+
+            jTable1.setModel(modelo);   
             
-         
-        jTable1.setValueAt(Resultadoventas.get(i), i ,1);
+            jTable1.setValueAt(Categorias.get(i), i ,0);
+            jTable1.setValueAt(ventas.get(i), i ,1);
         }
         
          
@@ -162,8 +172,14 @@ public class GUIInformes extends javax.swing.JFrame {
        
         for (i=0;i<Productos.size();i++){
             
-        jTable2.setValueAt(Productos.get(i), i ,0);
-        jTable2.setValueAt(Stock.get(i), i ,1);
+            DefaultTableModel modelo= (DefaultTableModel) jTable2.getModel();
+
+            modelo.addRow(new Object[]{"",""});
+
+            jTable2.setModel(modelo);    
+
+            jTable2.setValueAt(Productos.get(i), i ,0);
+            jTable2.setValueAt(Stock.get(i), i ,1);
         
         }
         

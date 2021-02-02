@@ -37,6 +37,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jButton1Informes = new javax.swing.JButton();
         jButton1Registrarfiado = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jButton1AvisoVencimiento = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,12 +52,12 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jButtonProductos.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonProductos.setText("Registrar Productos");
         jButtonProductos.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jButtonProductosAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jButtonProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -105,8 +106,17 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/580b585b2edbce24c47b2422_opt_1.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 370, 280));
 
+        jButton1AvisoVencimiento.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jButton1AvisoVencimiento.setText("Alerta Vencimiento");
+        jButton1AvisoVencimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1AvisoVencimientoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1AvisoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 180, 40));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 420));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
         pack();
         setLocationRelativeTo(null);
@@ -162,6 +172,16 @@ public class GUIPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonProductosAncestorAdded
 
+    private void jButton1AvisoVencimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1AvisoVencimientoActionPerformed
+        // TODO add your handling code here:
+        ProductosVencimiento NuevaVentana= new ProductosVencimiento();
+        
+        NuevaVentana.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_jButton1AvisoVencimientoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,6 +218,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1AvisoVencimiento;
     private javax.swing.JButton jButton1Informes;
     private javax.swing.JButton jButton1Registrarfiado;
     private javax.swing.JButton jButtonCompra;

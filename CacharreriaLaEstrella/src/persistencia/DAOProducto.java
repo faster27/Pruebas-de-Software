@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Compra;
 
@@ -28,6 +29,7 @@ public class DAOProducto {
     public static Connection conexion = null;
     public static Statement sentencia = null;
     static ResultSet resultado = null;
+    static ResultSet resultado2 = null;
     static String cadenaDriver = "org.postgresql.Driver";
    
     
@@ -207,6 +209,85 @@ public class DAOProducto {
     
     
     }
+     
+     
+     
+     public static ArrayList consultarProductosVencimiento(String FechaAviso) {
+       
+       // System.out.println(codigoProducto);
+        ArrayList<Object> ProductosVencerse = new ArrayList<>();
+        ArrayList<Object> ProductosVencerse2 = new ArrayList<>();
+        
+        String Sql = "select productos.nombreproducto,compraproducto.fechavencimiento,compraproducto.fechaaviso "
+                     + "from productos inner join compraproducto on productos.codigo = compraproducto.codigoproducto "
+                     + "where compraproducto.fechaaviso ='"+FechaAviso+"' "
+                     +"group by productos.nombreproducto,compraproducto.fechavencimiento,compraproducto.fechaaviso";
+        
+        String Sql2 ="select Count(*) "
+                     + "from productos inner join compraproducto on productos.codigo = compraproducto.codigoproducto "
+                     + "where compraproducto.fechaaviso ='"+FechaAviso+"'";
+        
+        try {
+                        
+			resultado = sentencia.executeQuery(Sql);
+                        resultado2 = sentencia.executeQuery(Sql2);
+                        
+			
+                        resultado2.next();
+                        
+                        int tamano = resultado2.getInt(1);
+                        
+                           
+                        int i;
+                        		                       
+                        for (i=0; i<tamano;i++){
+                        resultado.next();
+                        
+                        
+                            ProductosVencerse2.add( resultado.getString(1));
+                            ProductosVencerse2.add( resultado.getString(2));
+                            ProductosVencerse2.add( resultado.getString(3));
+                            
+                            if(ProductosVencerse.size()<=tamano){
+                            
+                                 ProductosVencerse.add( ProductosVencerse2);
+                                
+                            
+                            }
+                            else{
+                                ProductosVencerse2.remove(0);
+                                ProductosVencerse2.remove(0);
+                                ProductosVencerse2.remove(0);
+                            
+                            }
+                            
+                           
+                            
+                            
+                        
+                            
+                      
+                        
+                        
+                        }
+			
+                        
+                        
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e);
+		}
+        
+        //System.out.println(ProductosVencerse);
+        return ProductosVencerse;
+        
+        
+    }  
+     
+     
+     
     
    
     
