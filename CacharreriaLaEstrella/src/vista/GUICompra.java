@@ -68,6 +68,7 @@ public class GUICompra extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField1FechaVencimiento = new javax.swing.JTextField();
         jTextField2FechaAviso = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -84,6 +85,7 @@ public class GUICompra extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable2TablaCompras.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,91 +106,98 @@ public class GUICompra extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2TablaCompras);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 268, 700, 109));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 700, 109));
 
-        jButtonRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonRegresar.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
 
         jTextFieldFecha.setEditable(false);
-        getContentPane().add(jTextFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 68, -1));
+        getContentPane().add(jTextFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 100, -1));
 
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel5.setText("Fecha");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        jButtonBuscarCompra.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonBuscarCompra.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonBuscarCompra.setText("Buscar");
-        getContentPane().add(jButtonBuscarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
-        getContentPane().add(jTextField1CodigoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 93, -1));
+        getContentPane().add(jButtonBuscarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+        getContentPane().add(jTextField1CodigoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 100, -1));
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel1.setText("codigo compra");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel2.setText("Precio de compra");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-        getContentPane().add(jTextField2PrecioDeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 68, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        getContentPane().add(jTextField2PrecioDeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 100, -1));
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel3.setText("cantidad");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 60, -1));
-        getContentPane().add(jTextField3Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 66, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 60, -1));
+        getContentPane().add(jTextField3Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 100, -1));
 
-        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setText("codigo producto");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         jTextField1codigoproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1codigoproductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1codigoproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 68, -1));
+        getContentPane().add(jTextField1codigoproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 100, -1));
 
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel4.setText("nombre producto");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-        getContentPane().add(jTextField4NombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 100, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 100, -1));
+        getContentPane().add(jTextField4NombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 100, -1));
 
-        jButtonAñadirCompraProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonAñadirCompraProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonAñadirCompraProducto.setText("Añadir");
         jButtonAñadirCompraProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAñadirCompraProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
+        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
 
-        jButtonFinalizarCompra.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonFinalizarCompra.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonFinalizarCompra.setText("Finalizar compra");
         jButtonFinalizarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonFinalizarCompraActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonFinalizarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
+        getContentPane().add(jButtonFinalizarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 150, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/640-6400983_0-carrito-de-compras-rosado_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 190, 180));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 190, 180));
 
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel8.setText("Fecha de vencimiento");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, 20));
 
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel10.setText("Fecha de Aviso");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
-        getContentPane().add(jTextField1FechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 110, -1));
-        getContentPane().add(jTextField2FechaAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 110, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 100, -1));
+        getContentPane().add(jTextField1FechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 110, -1));
+        getContentPane().add(jTextField2FechaAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 110, -1));
+
+        jLabel11.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Compra de productos");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 480, 30));
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 440));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 460));
 
         pack();
         setLocationRelativeTo(null);
@@ -327,6 +336,7 @@ public class GUICompra extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

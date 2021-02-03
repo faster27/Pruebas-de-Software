@@ -47,82 +47,89 @@ public class GUIFiado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel1.setText("Cedula");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 64, -1));
-        getContentPane().add(jTextField1cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 77, -1));
+        getContentPane().add(jTextField1cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 80, -1));
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel2.setText("Nombre cliente");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-        getContentPane().add(jTextField2nombrecliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 72, -1));
+        getContentPane().add(jTextField2nombrecliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 80, -1));
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel3.setText("Total fiado");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jTextField3totalfiado.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         getContentPane().add(jTextField3totalfiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 82, -1));
 
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1.setText("Actualizar fiado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
 
-        jButton2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton2.setText("Abonar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 110, 160, -1));
 
-        jButton3RegistrarFiado.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton3RegistrarFiado.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton3RegistrarFiado.setText("Registrar fiado");
         jButton3RegistrarFiado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3RegistrarFiadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3RegistrarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+        getContentPane().add(jButton3RegistrarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 160, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cedula", "Nombre", "Valor Fiado", "Abono"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 224, 340, 148));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 232, 450, 140));
 
-        jButton3.setFont(new java.awt.Font("Trebuchet MS", 0, 10)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton3.setText("regresar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
 
+        jButton4ConsultarFiado.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton4ConsultarFiado.setText("Consultar fiado");
-        getContentPane().add(jButton4ConsultarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 110, -1));
+        getContentPane().add(jButton4ConsultarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 160, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 420));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 420));
 
         pack();
         setLocationRelativeTo(null);

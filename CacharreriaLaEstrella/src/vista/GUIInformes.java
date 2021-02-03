@@ -77,9 +77,11 @@ public class GUIInformes extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTextField1FechaUnoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("a");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 96, 10, -1));
 
@@ -90,7 +92,7 @@ public class GUIInformes extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField2FechaDosVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 98, -1));
 
-        jButton1ConsultarVentas.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton1ConsultarVentas.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1ConsultarVentas.setText("Consultar");
         jButton1ConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +138,7 @@ public class GUIInformes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 306, 250, 119));
 
-        jButton1Regresar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton1Regresar.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1Regresar.setText("regresar");
         jButton1Regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,10 +147,12 @@ public class GUIInformes extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 443, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Fecha inicio");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Fecha final");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 100, -1));
@@ -164,19 +168,22 @@ public class GUIInformes extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 320, 30));
         getContentPane().add(jTextField1FechaUnoCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 80, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Fecha inicio");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 80, -1));
         getContentPane().add(jTextField2FechaDosCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 98, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("a");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 10, -1));
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Fecha final");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 100, -1));
 
-        jButton1ConsultarVentas1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton1ConsultarVentas1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1ConsultarVentas1.setText("Consultar");
         jButton1ConsultarVentas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +204,7 @@ public class GUIInformes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 132, 320, 91));
 
-        jButton1ConsultarCompras.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButton1ConsultarCompras.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1ConsultarCompras.setText("Consultar");
         jButton1ConsultarCompras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,14 +231,17 @@ public class GUIInformes extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 320, 30));
         getContentPane().add(jTextField1FechaUnoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 80, -1));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Fecha inicio");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 80, -1));
         getContentPane().add(jTextField2FechaDosCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 98, -1));
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("a");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 10, -1));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Fecha final");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 100, -1));

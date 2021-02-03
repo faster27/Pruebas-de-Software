@@ -54,12 +54,15 @@ public class GUIProductos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1Cpp = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonRegresar.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,11 +91,11 @@ public class GUIProductos extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 282, 700, 139));
 
-        jLabelCodigoProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabelCodigoProducto.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabelCodigoProducto.setText("Codigo Producto");
         getContentPane().add(jLabelCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 58, -1, -1));
 
-        jLabelNombreProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabelNombreProducto.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabelNombreProducto.setText("Nombre Producto");
         getContentPane().add(jLabelNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
@@ -104,21 +107,21 @@ public class GUIProductos extends javax.swing.JFrame {
         getContentPane().add(jTextFieldNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 210, -1));
         getContentPane().add(jTextFieldCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 210, -1));
 
-        jLabelPrecioVenta.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabelPrecioVenta.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabelPrecioVenta.setText("Precio de Venta");
         getContentPane().add(jLabelPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
         getContentPane().add(jTextFieldPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 210, -1));
 
-        jButtonRegistrarProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonRegistrarProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonRegistrarProducto.setText("Registrar Producto");
         jButtonRegistrarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegistrarProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, -1, -1));
+        getContentPane().add(jButtonRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
 
-        jLabelCategoria.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabelCategoria.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabelCategoria.setText("Categoria");
         getContentPane().add(jLabelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
@@ -131,22 +134,24 @@ public class GUIProductos extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 98, 20));
 
-        jButtonAgregarProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jButtonAgregarProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonAgregarProducto.setText("Agregar Producto");
         jButtonAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregarProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+        getContentPane().add(jButtonAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/680-6808809_plan-web-tienda-virtual-productos-dibujos-hd-png_opt.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 300, 220));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 300, 210));
 
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("registro de productos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 320, 40));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 320, 40));
 
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel4.setText("Cpp");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 60, -1));
 
@@ -156,6 +161,14 @@ public class GUIProductos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1Cpp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 210, -1));
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel5.setText("Cantidad");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 90, -1));
+
+        jTextField1.setEditable(false);
+        jTextField1.setText("0");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 210, -1));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
@@ -287,12 +300,14 @@ public class GUIProductos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelCategoria;
     private javax.swing.JLabel jLabelCodigoProducto;
     private javax.swing.JLabel jLabelNombreProducto;
     private javax.swing.JLabel jLabelPrecioVenta;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableTablaProductos;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField1Cpp;
     private javax.swing.JTextField jTextFieldCodigoProducto;
     private javax.swing.JTextField jTextFieldNombreProducto;
