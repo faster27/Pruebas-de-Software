@@ -52,6 +52,8 @@ public class GUIProductos extends javax.swing.JFrame {
         jButtonAgregarProducto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1Cpp = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,11 +73,11 @@ public class GUIProductos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CodigoProducto", "Nombre", "Precio Venta", "Categoria"
+                "CodigoProducto", "Nombre", "Precio Venta", "Categoria", "cpp"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -92,14 +94,20 @@ public class GUIProductos extends javax.swing.JFrame {
 
         jLabelNombreProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabelNombreProducto.setText("Nombre Producto");
-        getContentPane().add(jLabelNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-        getContentPane().add(jTextFieldNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 210, -1));
-        getContentPane().add(jTextFieldCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 80, -1));
+        getContentPane().add(jLabelNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        jTextFieldNombreProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreProductoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 210, -1));
+        getContentPane().add(jTextFieldCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 210, -1));
 
         jLabelPrecioVenta.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabelPrecioVenta.setText("Precio de Venta");
-        getContentPane().add(jLabelPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        getContentPane().add(jTextFieldPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 162, 210, -1));
+        getContentPane().add(jLabelPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        getContentPane().add(jTextFieldPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 210, -1));
 
         jButtonRegistrarProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jButtonRegistrarProducto.setText("Registrar Producto");
@@ -112,7 +120,7 @@ public class GUIProductos extends javax.swing.JFrame {
 
         jLabelCategoria.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabelCategoria.setText("Categoria");
-        getContentPane().add(jLabelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        getContentPane().add(jLabelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         jComboBoxCategoria.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aseo Personal", "Aseo Hogar ", "Bebidas", "Bisuteria", "Jugueteria", "Ferreteria", "Snacks", "Mascotas", "Medicamentos", "Papeleria" }));
@@ -121,7 +129,7 @@ public class GUIProductos extends javax.swing.JFrame {
                 jComboBoxCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 98, 20));
+        getContentPane().add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 98, 20));
 
         jButtonAgregarProducto.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jButtonAgregarProducto.setText("Agregar Producto");
@@ -139,9 +147,19 @@ public class GUIProductos extends javax.swing.JFrame {
         jLabel3.setText("registro de productos");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 320, 40));
 
+        jLabel4.setText("Cpp");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 60, -1));
+
+        jTextField1Cpp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1CppActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1Cpp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 210, -1));
+
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 0, 770, 460));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 460));
 
         pack();
         setLocationRelativeTo(null);
@@ -167,6 +185,7 @@ public class GUIProductos extends javax.swing.JFrame {
             nuevoProducto.setCategoria((String) jTableTablaProductos1.getValueAt(i, 3));
             nuevoProducto.setPrecioVenta((double) jTableTablaProductos1.getValueAt(i, 2));
             nuevoProducto.setCantidad(0);
+            nuevoProducto.setCpp((double) jTableTablaProductos1.getValueAt(i, 4));
             
             DAOProducto.conexion();
             DAOProducto.GuardarProducto(nuevoProducto);
@@ -197,21 +216,31 @@ public class GUIProductos extends javax.swing.JFrame {
 
         DefaultTableModel modelo=(DefaultTableModel) jTableTablaProductos.getModel();
 
-        Object [] fila=new Object[4];
+        Object [] fila=new Object[5];
 
         fila[0]=Integer.parseInt(jTextFieldCodigoProducto.getText());
 
         fila[1]=jTextFieldNombreProducto.getText();
 
-        fila[2]=0.0;
+        fila[2]=Double.parseDouble(jTextFieldPrecioVenta.getText());
 
         fila[3]=jComboBoxCategoria.getSelectedItem();
+        
+        fila[4]= Double.parseDouble(jTextField1Cpp.getText());
 
         modelo.addRow(fila);
 
         jTableTablaProductos.setModel(modelo);
 
     }//GEN-LAST:event_jButtonAgregarProductoActionPerformed
+
+    private void jTextFieldNombreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreProductoActionPerformed
+
+    private void jTextField1CppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1CppActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1CppActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,12 +286,14 @@ public class GUIProductos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelCategoria;
     private javax.swing.JLabel jLabelCodigoProducto;
     private javax.swing.JLabel jLabelNombreProducto;
     private javax.swing.JLabel jLabelPrecioVenta;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableTablaProductos;
+    private javax.swing.JTextField jTextField1Cpp;
     private javax.swing.JTextField jTextFieldCodigoProducto;
     private javax.swing.JTextField jTextFieldNombreProducto;
     private javax.swing.JTextField jTextFieldPrecioVenta;

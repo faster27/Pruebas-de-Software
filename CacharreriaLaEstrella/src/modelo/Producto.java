@@ -16,12 +16,13 @@ public class Producto {
     private  String nombre;
     private String categoria;
     private double PrecioVenta;
+    private double Cpp;
 
     public Producto() {
         
     }
 
-    public Producto(int id, String nombre, String categoria, double PrecioVenta,int Cantidad) {
+    public Producto(int id, String nombre, String categoria, double PrecioVenta,int Cantidad,double Cpp) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
         this.Cantidad = Cantidad;
@@ -29,6 +30,15 @@ public class Producto {
         this.nombre = nombre;
         this.categoria = categoria;
         this.PrecioVenta = PrecioVenta;
+        this.Cpp= Cpp;
+    }
+
+    public double getCpp() {
+        return Cpp;
+    }
+
+    public void setCpp(double Cpp) {
+        this.Cpp = Cpp;
     }
     
     

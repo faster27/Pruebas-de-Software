@@ -248,11 +248,8 @@ public class GUICompra extends javax.swing.JFrame {
         int i;
         
         for (i =0 ; i<filas;i++){
-            
-           
-            
-            
-            
+                   
+                                   
             nuevaCompra.setcodigoCompra((int) jTableTablaCompras1.getValueAt(i, 0));
             nuevaCompra.setCantidad((int) jTableTablaCompras1.getValueAt(i, 2));
             nuevaCompra.setPrecioCompraProducto((double) jTableTablaCompras1.getValueAt(i, 3));
@@ -267,17 +264,17 @@ public class GUICompra extends javax.swing.JFrame {
            
             DAOCompra.GuardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso,TotalVenta);
             DAOProducto.conexion();
-            int PrecioVentaActual= DAOProducto.consultarPrecioVenta(nuevaCompra.getCodigoProducto());
+            int CppActual= DAOProducto.consultarCpp(nuevaCompra.getCodigoProducto());
             int CantidadStockActual=DAOProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
            
             DAOProducto.ActualizarCantidad(nuevaCompra.getCodigoProducto(), nuevaCompra.getCantidad(),1);
             
           
             
-            double PrecioVentaNuevo;
-            PrecioVentaNuevo = CPP.ActualizarPrecioVenta(CantidadStockActual, PrecioVentaActual, nuevaCompra.getCantidad(),(nuevaCompra.getCantidad()* nuevaCompra.getPrecioCompraProducto()) );
+            double CppNuevo;
+            CppNuevo = CPP.ActualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
             DAOProducto.conexion();
-            DAOProducto.ActualizarPrecioVenta(nuevaCompra.getCodigoProducto(), PrecioVentaNuevo);
+            DAOProducto.ActualizarCpp(nuevaCompra.getCodigoProducto(), CppNuevo);
             
             
         

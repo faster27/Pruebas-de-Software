@@ -66,8 +66,9 @@ public class DAOProducto {
                                 + "nombreproducto,"
                                 +"precioventaproducto,"
                                 + "categoria,"
-                                + "cantidadproducto)"
-                                + "  VALUES (?,?,?,?,?)";
+                                + "cantidadproducto,"
+                                + "cpp)"
+                                + "  VALUES (?,?,?,?,?,?)";
 
 			PreparedStatement ps = conexion.prepareStatement(consultaSQL);
 
@@ -78,6 +79,7 @@ public class DAOProducto {
                         ps.setDouble(3, producto.getPrecioVenta());
 			ps.setString(4, producto.getCategoria());
                         ps.setLong(5, producto.getCantidad());
+                        ps.setDouble(6, producto.getCpp());
                         
 			ps.executeQuery();
 			ps.close();
@@ -157,11 +159,11 @@ public class DAOProducto {
     }
     
     
-    public static int consultarPrecioVenta(int codigoProducto) {
-        int PrecioVenta = 0;
+    public static int consultarCpp(int codigoProducto) {
+        int Cpp = 0;
        // System.out.println(codigoProducto);
         
-        String Sql = "select precioventaproducto  from productos where (codigo="+codigoProducto+")";
+        String Sql = "select cpp  from productos where (codigo="+codigoProducto+")";
         
         try {
                         
@@ -169,7 +171,7 @@ public class DAOProducto {
                         
 			resultado.next();
 
-			PrecioVenta = resultado.getInt(1);
+			Cpp = resultado.getInt(1);
                         
                         
 
@@ -181,22 +183,22 @@ public class DAOProducto {
 		}
         
         
-        return PrecioVenta;
+        return Cpp;
         
         
     } 
     
-     public static void ActualizarPrecioVenta(int codigoProducto, double PrecioVentaNuevo) {
+     public static void ActualizarCpp(int codigoProducto, double CppNuevo) {
     
         
-     int precioVentaNuevo= (int)PrecioVentaNuevo;
+     int NuevoCpp= (int)CppNuevo;
      
     
      
      try {
 
 			PreparedStatement pss = DAOProducto.conexion.prepareStatement("UPDATE productos SET "
-					+ "precioventaproducto='" + precioVentaNuevo
+					+ "cpp='" + NuevoCpp
 					
 					+ "' WHERE codigo='"+ codigoProducto + "'");
 			pss.executeUpdate();

@@ -1,5 +1,4 @@
-Informe de ventas 2/2/2021 hasta 2/2/2021
+Informe de ventas 3/2/2021 hasta 3/2/2021
 
 Categoria     |     ValorTotalVenta
-Bebidas     |     5000.
 Snacks     |     5000.

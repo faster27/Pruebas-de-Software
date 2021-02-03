@@ -43,6 +43,7 @@ public class GUIFiado extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
+        jButton4ConsultarFiado = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,13 +67,13 @@ public class GUIFiado extends javax.swing.JFrame {
         getContentPane().add(jTextField3totalfiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 82, -1));
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jButton1.setText("Sumar fiado existente");
+        jButton1.setText("Actualizar fiado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jButton2.setText("Abonar");
@@ -115,6 +116,9 @@ public class GUIFiado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+
+        jButton4ConsultarFiado.setText("Consultar fiado");
+        getContentPane().add(jButton4ConsultarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 110, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -207,6 +211,7 @@ public class GUIFiado extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton3RegistrarFiado;
+    private javax.swing.JButton jButton4ConsultarFiado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

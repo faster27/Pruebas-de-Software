@@ -213,9 +213,13 @@ public class GUIVentas extends javax.swing.JFrame {
             nuevaVenta.setCantidadProducto((int) jTableTablaProductos1.getValueAt(i, 3));
             nuevaVenta.setFecha((String) jTableTablaProductos1.getValueAt(i, 4));
             nuevaVenta.setTotalventa((double) jTableTablaProductos1.getValueAt(i, 6));
+            
+            DAOProducto.conexion();
+            double cpp=DAOProducto.consultarCpp(nuevaVenta.getCodigoproducto());
+            double costoCpp= nuevaVenta.getCantidadProducto()* cpp;
 
             DAOVenta.conexion();
-            DAOVenta.GuardarVentaProducto(nuevaVenta);
+            DAOVenta.GuardarVentaProducto(nuevaVenta, costoCpp );
             DAOProducto.conexion();
             DAOProducto.ActualizarCantidad(nuevaVenta.getCodigoproducto(), nuevaVenta.getCantidadProducto(),0);
 

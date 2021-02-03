@@ -13,16 +13,16 @@ package Logica;
  */
 public class CPP {
     
-    public static double ActualizarPrecioVenta(int CantidadEnStock, double PrecioActual, int UnidadesNuevas, double CostoCompra){
+    public static double ActualizarCpp(int CantidadEnStock, double CppActual, int UnidadesNuevas, double CostoCompraUnidad){
     
-       System.out.println(CantidadEnStock);
-          System.out.println(PrecioActual);
+          System.out.println(CantidadEnStock);
+          System.out.println(CppActual);
           System.out.println(UnidadesNuevas);
-          System.out.println(CostoCompra);
+          System.out.println(CostoCompraUnidad);
         
 
        //calcular el cpp
-       double cpp_new = (CantidadEnStock*PrecioActual + UnidadesNuevas*CostoCompra)/(CantidadEnStock+UnidadesNuevas);
+       double cpp_new = (CantidadEnStock*CppActual + UnidadesNuevas*CostoCompraUnidad)/(CantidadEnStock+UnidadesNuevas);
         
         System.out.println(cpp_new);
        return cpp_new;
