@@ -99,7 +99,7 @@ public class GUIInformes extends javax.swing.JFrame {
                 jButton1ConsultarVentasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, -1, -1));
+        getContentPane().add(jButton1ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
         jLabel3.setText("Consultar cantidad de stock de cada producto");
@@ -124,7 +124,7 @@ public class GUIInformes extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1InformeCostos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 330, 91));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 330, 91));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -190,7 +190,7 @@ public class GUIInformes extends javax.swing.JFrame {
                 jButton1ConsultarVentas1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1ConsultarVentas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, -1));
+        getContentPane().add(jButton1ConsultarVentas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, -1, -1));
 
         jTable1InformeVentas1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -202,7 +202,7 @@ public class GUIInformes extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable1InformeVentas1);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 132, 320, 91));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 330, 91));
 
         jButton1ConsultarCompras.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1ConsultarCompras.setText("Consultar");
