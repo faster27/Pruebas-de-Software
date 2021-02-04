@@ -88,6 +88,7 @@ public class GUICompra extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable2TablaCompras.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTable2TablaCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -47,7 +47,7 @@ public class GUIInformes extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButtonConsultarStock = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1InformeCostos = new javax.swing.JTable();
+        jTable1InformeVentas = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton1Regresar = new javax.swing.JButton();
@@ -60,9 +60,9 @@ public class GUIInformes extends javax.swing.JFrame {
         jTextField2FechaDosCostos = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1ConsultarVentas1 = new javax.swing.JButton();
+        jButton1ConsultarCostos = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1InformeVentas1 = new javax.swing.JTable();
+        jTable1InformeCostos = new javax.swing.JTable();
         jButton1ConsultarCompras = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1InformeCompras = new javax.swing.JTable();
@@ -81,7 +81,7 @@ public class GUIInformes extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTextField1FechaUnoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel2.setText("a");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 96, 10, -1));
 
@@ -114,7 +114,7 @@ public class GUIInformes extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonConsultarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
-        jTable1InformeCostos.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1InformeVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -122,7 +122,7 @@ public class GUIInformes extends javax.swing.JFrame {
                 "Categoria", "Total Vendido"
             }
         ));
-        jScrollPane1.setViewportView(jTable1InformeCostos);
+        jScrollPane1.setViewportView(jTable1InformeVentas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 330, 91));
 
@@ -147,12 +147,12 @@ public class GUIInformes extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 443, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Fecha inicio");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Fecha final");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 100, -1));
@@ -168,31 +168,31 @@ public class GUIInformes extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 320, 30));
         getContentPane().add(jTextField1FechaUnoCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 80, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Fecha inicio");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 80, -1));
         getContentPane().add(jTextField2FechaDosCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 98, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel10.setText("a");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 10, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Fecha final");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 100, -1));
 
-        jButton1ConsultarVentas1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButton1ConsultarVentas1.setText("Consultar");
-        jButton1ConsultarVentas1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1ConsultarCostos.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jButton1ConsultarCostos.setText("Consultar");
+        jButton1ConsultarCostos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ConsultarVentas1ActionPerformed(evt);
+                jButton1ConsultarCostosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1ConsultarVentas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, -1, -1));
+        getContentPane().add(jButton1ConsultarCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, -1, -1));
 
-        jTable1InformeVentas1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1InformeCostos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -200,9 +200,9 @@ public class GUIInformes extends javax.swing.JFrame {
                 "Categoria", "Total Vendido"
             }
         ));
-        jScrollPane3.setViewportView(jTable1InformeVentas1);
+        jScrollPane3.setViewportView(jTable1InformeCostos);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 330, 91));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 330, 91));
 
         jButton1ConsultarCompras.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1ConsultarCompras.setText("Consultar");
@@ -211,7 +211,7 @@ public class GUIInformes extends javax.swing.JFrame {
                 jButton1ConsultarComprasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1ConsultarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, -1, -1));
+        getContentPane().add(jButton1ConsultarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, -1, -1));
 
         jTable1InformeCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -231,17 +231,17 @@ public class GUIInformes extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 320, 30));
         getContentPane().add(jTextField1FechaUnoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 80, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Fecha inicio");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 80, -1));
         getContentPane().add(jTextField2FechaDosCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 98, -1));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel14.setText("a");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 10, -1));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Fecha final");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 100, -1));
@@ -270,14 +270,14 @@ public class GUIInformes extends javax.swing.JFrame {
         int i;
        
         for (i=0;i<Categorias.size();i++){
-             DefaultTableModel modelo= (DefaultTableModel) jTable1InformeCostos.getModel();
+             DefaultTableModel modelo= (DefaultTableModel) jTable1InformeVentas.getModel();
 
             modelo.addRow(new Object[]{"",""});
 
-            jTable1InformeCostos.setModel(modelo);   
+            jTable1InformeVentas.setModel(modelo);   
             
-            jTable1InformeCostos.setValueAt(Categorias.get(i), i ,0);
-            jTable1InformeCostos.setValueAt(ventas.get(i), i ,1);
+            jTable1InformeVentas.setValueAt(Categorias.get(i), i ,0);
+            jTable1InformeVentas.setValueAt(ventas.get(i), i ,1);
         }
         
          guardarTabla(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
@@ -324,9 +324,9 @@ public class GUIInformes extends javax.swing.JFrame {
         this.setVisible(false);  
     }//GEN-LAST:event_jButton1RegresarActionPerformed
 
-    private void jButton1ConsultarVentas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarVentas1ActionPerformed
+    private void jButton1ConsultarCostosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarCostosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ConsultarVentas1ActionPerformed
+    }//GEN-LAST:event_jButton1ConsultarCostosActionPerformed
 
     private void jButton1ConsultarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarComprasActionPerformed
         // TODO add your handling code here:
@@ -373,8 +373,8 @@ public class GUIInformes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1ConsultarCompras;
+    private javax.swing.JButton jButton1ConsultarCostos;
     private javax.swing.JButton jButton1ConsultarVentas;
-    private javax.swing.JButton jButton1ConsultarVentas1;
     private javax.swing.JButton jButton1Regresar;
     private javax.swing.JButton jButtonConsultarStock;
     private javax.swing.JLabel jLabel1;
@@ -398,7 +398,7 @@ public class GUIInformes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1InformeCompras;
     private javax.swing.JTable jTable1InformeCostos;
-    private javax.swing.JTable jTable1InformeVentas1;
+    private javax.swing.JTable jTable1InformeVentas;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1FechaUnoCompras;
     private javax.swing.JTextField jTextField1FechaUnoCostos;
@@ -419,12 +419,12 @@ public class GUIInformes extends javax.swing.JFrame {
             bfw.write("\n");
             bfw.write("Categoria     |     ValorTotalVenta");
             bfw.write("\n");
-            for (int i = 0 ; i < jTable1InformeCostos.getRowCount(); i++) //realiza un barrido por filas.
+            for (int i = 0 ; i < jTable1InformeVentas.getRowCount(); i++) //realiza un barrido por filas.
             {
-                for(int j = 0 ; j < jTable1InformeCostos.getColumnCount();j++) //realiza un barrido por columnas.
+                for(int j = 0 ; j < jTable1InformeVentas.getColumnCount();j++) //realiza un barrido por columnas.
                 {
-                    bfw.write(String.valueOf(jTable1InformeCostos.getValueAt(i,j)));
-                    if (j < jTable1InformeCostos.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
+                    bfw.write(String.valueOf(jTable1InformeVentas.getValueAt(i,j)));
+                    if (j < jTable1InformeVentas.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
                         bfw.write("     |     ");
                     }else{
                     bfw.write(".");
