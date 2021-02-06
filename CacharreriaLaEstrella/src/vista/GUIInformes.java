@@ -44,12 +44,8 @@ public class GUIInformes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField2FechaDosVentas = new javax.swing.JTextField();
         jButton1ConsultarVentas = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButtonConsultarStock = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1InformeVentas = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jButton1Regresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -72,6 +68,15 @@ public class GUIInformes extends javax.swing.JFrame {
         jTextField2FechaDosCompras = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField1FechaUnoMasVendido = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField2FechaDosMasVendido = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jButton1ConsultarMasVendido = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTableMasVendido = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
@@ -101,19 +106,6 @@ public class GUIInformes extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
-        jLabel3.setText("Consultar cantidad de stock de cada producto");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 31));
-
-        jButtonConsultarStock.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jButtonConsultarStock.setText("Generar Informe");
-        jButtonConsultarStock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConsultarStockActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonConsultarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
-
         jTable1InformeVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -126,18 +118,6 @@ public class GUIInformes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 330, 91));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "producto", "stock"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 306, 250, 119));
-
         jButton1Regresar.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton1Regresar.setText("regresar");
         jButton1Regresar.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +125,7 @@ public class GUIInformes extends javax.swing.JFrame {
                 jButton1RegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 443, -1, -1));
+        getContentPane().add(jButton1Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -211,7 +191,7 @@ public class GUIInformes extends javax.swing.JFrame {
                 jButton1ConsultarComprasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1ConsultarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, -1, -1));
+        getContentPane().add(jButton1ConsultarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, -1, -1));
 
         jTable1InformeCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -223,31 +203,79 @@ public class GUIInformes extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable1InformeCompras);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 320, 91));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 330, 91));
 
         jLabel12.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Consultar informe Compras");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 320, 30));
-        getContentPane().add(jTextField1FechaUnoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 80, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 320, 30));
+        getContentPane().add(jTextField1FechaUnoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 80, -1));
 
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Fecha inicio");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 80, -1));
-        getContentPane().add(jTextField2FechaDosCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 98, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 80, -1));
+        getContentPane().add(jTextField2FechaDosCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 98, -1));
 
         jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel14.setText("a");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 10, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 10, -1));
 
         jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Fecha final");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 100, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 100, -1));
+
+        jLabel16.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Consultar Productos mas vendidos");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 330, 30));
+
+        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Fecha inicio");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 80, -1));
+        getContentPane().add(jTextField1FechaUnoMasVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 80, -1));
+
+        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel18.setText("a");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 10, -1));
+
+        jTextField2FechaDosMasVendido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2FechaDosMasVendidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2FechaDosMasVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 98, -1));
+
+        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Fecha final");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 100, -1));
+
+        jButton1ConsultarMasVendido.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jButton1ConsultarMasVendido.setText("Consultar");
+        jButton1ConsultarMasVendido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ConsultarMasVendidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1ConsultarMasVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
+
+        jTableMasVendido.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Producto", "Cantidad Vendida"
+            }
+        ));
+        jScrollPane5.setViewportView(jTableMasVendido);
+
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 340, 91));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 480));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
         setLocationRelativeTo(null);
@@ -282,42 +310,6 @@ public class GUIInformes extends javax.swing.JFrame {
         
          guardarTablaVentas(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
     }//GEN-LAST:event_jButton1ConsultarVentasActionPerformed
-
-    private void jButtonConsultarStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarStockActionPerformed
-        // TODO add your handling code here:
-        
-        ArrayList<Object> ResultadoTotal = new ArrayList<>();
-        ArrayList<String> Productos = new ArrayList<>();
-        ArrayList<Integer> Stock = new ArrayList<>();
-        
-        DAOInformes.conexion();
-        ResultadoTotal = DAOInformes.ConsultarStock();
-        
-        
-        Productos=(ArrayList<String>) ResultadoTotal.get(0);
-        Stock=(ArrayList<Integer>) ResultadoTotal.get(1);
-        
-       int i;
-       
-        for (i=0;i<Productos.size();i++){
-            
-            DefaultTableModel modelo= (DefaultTableModel) jTable2.getModel();
-
-            modelo.addRow(new Object[]{"",""});
-
-            jTable2.setModel(modelo);    
-
-            jTable2.setValueAt(Productos.get(i), i ,0);
-            jTable2.setValueAt(Stock.get(i), i ,1);
-        
-        }
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_jButtonConsultarStockActionPerformed
 
     private void jButton1RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1RegresarActionPerformed
         // TODO add your handling code here:
@@ -391,6 +383,40 @@ public class GUIInformes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2FechaDosVentasActionPerformed
 
+    private void jTextField2FechaDosMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2FechaDosMasVendidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2FechaDosMasVendidoActionPerformed
+
+    private void jButton1ConsultarMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarMasVendidoActionPerformed
+        // TODO add your handling code here:
+        ArrayList<Object> ResultadoMasVendidos = new ArrayList<>();
+        ArrayList<String> Categorias = new ArrayList<>();
+        ArrayList<Integer> MasVendidos = new ArrayList<>();
+        
+        DAOInformes.conexion();
+        ResultadoMasVendidos=DAOInformes.ConsultarInformeMasVendidos(jTextField1FechaUnoMasVendido.getText(), jTextField2FechaDosMasVendido.getText());
+        
+      
+        
+        Categorias = (ArrayList<String>) ResultadoMasVendidos.get(0);
+        MasVendidos =(ArrayList<Integer>) (ResultadoMasVendidos.get(1));
+        
+        int i;
+       
+        for (i=0;i<Categorias.size();i++){
+             DefaultTableModel modelo= (DefaultTableModel) jTableMasVendido.getModel();
+
+            modelo.addRow(new Object[]{"",""});
+
+            jTableMasVendido.setModel(modelo);   
+            
+            jTableMasVendido.setValueAt(Categorias.get(i), i ,0);
+            jTableMasVendido.setValueAt(MasVendidos.get(i), i ,1);
+        }
+        
+        
+    }//GEN-LAST:event_jButton1ConsultarMasVendidoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -429,9 +455,9 @@ public class GUIInformes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1ConsultarCompras;
     private javax.swing.JButton jButton1ConsultarCostos;
+    private javax.swing.JButton jButton1ConsultarMasVendido;
     private javax.swing.JButton jButton1ConsultarVentas;
     private javax.swing.JButton jButton1Regresar;
-    private javax.swing.JButton jButtonConsultarStock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -439,8 +465,11 @@ public class GUIInformes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -448,18 +477,20 @@ public class GUIInformes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable1InformeCompras;
     private javax.swing.JTable jTable1InformeCostos;
     private javax.swing.JTable jTable1InformeVentas;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableMasVendido;
     private javax.swing.JTextField jTextField1FechaUnoCompras;
     private javax.swing.JTextField jTextField1FechaUnoCostos;
+    private javax.swing.JTextField jTextField1FechaUnoMasVendido;
     private javax.swing.JTextField jTextField1FechaUnoVentas;
     private javax.swing.JTextField jTextField2FechaDosCompras;
     private javax.swing.JTextField jTextField2FechaDosCostos;
+    private javax.swing.JTextField jTextField2FechaDosMasVendido;
     private javax.swing.JTextField jTextField2FechaDosVentas;
     // End of variables declaration//GEN-END:variables
 

@@ -213,6 +213,62 @@ public class DAOInformes {
 
 
 	}
+    
+    public static ArrayList ConsultarInformeMasVendidos(String fecha1, String fecha2) {
+         
+         String text;
+         
+          ArrayList<Integer> MasVendidos = new ArrayList<>();
+          ArrayList<String> NombreProducto = new ArrayList<>();
+          ArrayList<Object> Resultado = new ArrayList<>();
+
+		try {
+
+			// ARMA LA SENTENCIA DE INSERCCION
+                        String Consultanumerofilas="SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'";
+			String consultaSQL = "SELECT productos.nombreproducto, SUM(ventaproducto.cantidad) as TotalCategoria " +
+                                            "FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN " +
+                                            "venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha " +
+                                            "between'"+fecha1+"' and '"+fecha2+"' group by productos.nombreproducto order by TotalCategoria desc";
+					
+                        
+			resultado = sentencia.executeQuery(consultaSQL);
+                        resultado2 = sentencia.executeQuery(Consultanumerofilas);
+                        resultado2.next();
+                          int i;
+                        		                       
+                        for (i=0; i<resultado2.getInt(1);i++){
+                            
+                            if(resultado.next()){
+                               
+
+                                NombreProducto.add(resultado.getString(1));
+                                MasVendidos.add(resultado.getInt(2));
+                                 resultado.next();
+                            }else{
+                            
+                            }
+                            
+                            
+                        }
+                        
+                        Resultado.add(NombreProducto);
+                        Resultado.add(MasVendidos);
+                   
+                        
+		} catch (SQLException e) {
+                        e.printStackTrace();
+			System.out.println(e);
+
+			JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
+
+		}
+         return Resultado;  
+               
+               
+
+
+	}
      
      
      
