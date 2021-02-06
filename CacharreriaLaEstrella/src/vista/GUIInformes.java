@@ -197,7 +197,7 @@ public class GUIInformes extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Categoria", "Total Vendido"
+                "Categoria", "Costos"
             }
         ));
         jScrollPane3.setViewportView(jTable1InformeCostos);
@@ -218,7 +218,7 @@ public class GUIInformes extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Categoria", "Total Vendido"
+                "Producto", "Total Compra"
             }
         ));
         jScrollPane4.setViewportView(jTable1InformeCompras);
@@ -280,7 +280,7 @@ public class GUIInformes extends javax.swing.JFrame {
             jTable1InformeVentas.setValueAt(ventas.get(i), i ,1);
         }
         
-         guardarTabla(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
+         guardarTablaVentas(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
     }//GEN-LAST:event_jButton1ConsultarVentasActionPerformed
 
     private void jButtonConsultarStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarStockActionPerformed
@@ -326,10 +326,65 @@ public class GUIInformes extends javax.swing.JFrame {
 
     private void jButton1ConsultarCostosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarCostosActionPerformed
         // TODO add your handling code here:
+         ArrayList<Object> ResultadoCostos = new ArrayList<>();
+        ArrayList<String> Categorias = new ArrayList<>();
+        ArrayList<Integer> Costos = new ArrayList<>();
+        
+        DAOInformes.conexion();
+        ResultadoCostos=DAOInformes.ConsultarInformeCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
+        
+      
+        
+        Categorias = (ArrayList<String>) ResultadoCostos.get(0);
+        Costos =(ArrayList<Integer>) (ResultadoCostos.get(1));
+        
+        int i;
+       
+        for (i=0;i<Categorias.size();i++){
+             DefaultTableModel modelo= (DefaultTableModel) jTable1InformeCostos.getModel();
+
+            modelo.addRow(new Object[]{"",""});
+
+            jTable1InformeCostos.setModel(modelo);   
+            
+            jTable1InformeCostos.setValueAt(Categorias.get(i), i ,0);
+            jTable1InformeCostos.setValueAt(Costos.get(i), i ,1);
+        }
+        
+         guardarTablaCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
+        
     }//GEN-LAST:event_jButton1ConsultarCostosActionPerformed
 
     private void jButton1ConsultarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarComprasActionPerformed
         // TODO add your handling code here:
+        
+        ArrayList<Object> ResultadoCompra = new ArrayList<>();
+        ArrayList<String> Categorias = new ArrayList<>();
+        ArrayList<Integer> Compra = new ArrayList<>();
+        
+        DAOInformes.conexion();
+        ResultadoCompra=DAOInformes.ConsultarInformeCompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
+        
+      
+        
+        Categorias = (ArrayList<String>) ResultadoCompra.get(0);
+        Compra =(ArrayList<Integer>) (ResultadoCompra.get(1));
+        
+        int i;
+       
+        for (i=0;i<Categorias.size();i++){
+             DefaultTableModel modelo= (DefaultTableModel) jTable1InformeCompras.getModel();
+
+            modelo.addRow(new Object[]{"",""});
+
+            jTable1InformeCompras.setModel(modelo);   
+            
+            jTable1InformeCompras.setValueAt(Categorias.get(i), i ,0);
+            jTable1InformeCompras.setValueAt(Compra.get(i), i ,1);
+        }
+        
+          guardarTablaCompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
+        
     }//GEN-LAST:event_jButton1ConsultarComprasActionPerformed
 
     private void jTextField2FechaDosVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2FechaDosVentasActionPerformed
@@ -408,7 +463,7 @@ public class GUIInformes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2FechaDosVentas;
     // End of variables declaration//GEN-END:variables
 
-    private void guardarTabla(String fecha1, String fecha2) {
+    private void guardarTablaVentas(String fecha1, String fecha2) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             try {
 
@@ -426,6 +481,71 @@ public class GUIInformes extends javax.swing.JFrame {
                     bfw.write(String.valueOf(jTable1InformeVentas.getValueAt(i,j)));
                     if (j < jTable1InformeVentas.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
                         bfw.write("     |     ");
+                    }else{
+                    bfw.write(".");
+                    }
+                }
+                bfw.newLine(); //inserta nueva linea.
+            }
+
+            bfw.close(); //cierra archivo!
+            System.out.println("El archivo fue salvado correctamente!");
+        } catch (IOException e) {
+            System.out.println("ERROR: Ocurrio un problema al salvar el archivo!" + e.getMessage());
+        }
+    }
+    
+    
+    private void guardarTablaCostos(String fecha1, String fecha2) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            try {
+
+            String sucursalesCSVFile = "src/Informe de costos.txt";
+            BufferedWriter bfw = new BufferedWriter(new FileWriter(sucursalesCSVFile ));
+            bfw.write("Informe de costos "+fecha1+" hasta "+fecha2+"");
+            bfw.write("\n");
+            bfw.write("\n");
+            bfw.write("Categoria     |     Costos");
+            bfw.write("\n");
+            for (int i = 0 ; i < jTable1InformeCostos.getRowCount(); i++) //realiza un barrido por filas.
+            {
+                for(int j = 0 ; j < jTable1InformeCostos.getColumnCount();j++) //realiza un barrido por columnas.
+                {
+                    bfw.write(String.valueOf(jTable1InformeCostos.getValueAt(i,j)));
+                    if (j < jTable1InformeCostos.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
+                        bfw.write("     |     ");
+                    }else{
+                    bfw.write(".");
+                    }
+                }
+                bfw.newLine(); //inserta nueva linea.
+            }
+
+            bfw.close(); //cierra archivo!
+            System.out.println("El archivo fue salvado correctamente!");
+        } catch (IOException e) {
+            System.out.println("ERROR: Ocurrio un problema al salvar el archivo!" + e.getMessage());
+        }
+    }
+    
+    private void guardarTablaCompra(String fecha1, String fecha2) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            try {
+
+            String sucursalesCSVFile = "src/Informe de compra.txt";
+            BufferedWriter bfw = new BufferedWriter(new FileWriter(sucursalesCSVFile ));
+            bfw.write("Informe de compra "+fecha1+" hasta "+fecha2+"");
+            bfw.write("\n");
+            bfw.write("\n");
+            bfw.write("Nombre del producto     |     Total compra");
+            bfw.write("\n");
+            for (int i = 0 ; i < jTable1InformeCompras.getRowCount(); i++) //realiza un barrido por filas.
+            {
+                for(int j = 0 ; j < jTable1InformeCompras.getColumnCount();j++) //realiza un barrido por columnas.
+                {
+                    bfw.write(String.valueOf(jTable1InformeCompras.getValueAt(i,j)));
+                    if (j < jTable1InformeCompras.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
+                        bfw.write("          |          ");
                     }else{
                     bfw.write(".");
                     }

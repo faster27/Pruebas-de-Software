@@ -66,7 +66,7 @@ public class DAOInformes {
 
 			// ARMA LA SENTENCIA DE INSERCCION
                         String Consultanumerofilas="SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'";
-			String consultaSQL = "SELECT productos.categoria, SUM(ventaproducto.totalventaproducto) as TotalCategoria, venta.fecha FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'group by productos.categoria, venta.fecha";
+			String consultaSQL = "SELECT productos.categoria, SUM(ventaproducto.totalventaproducto) as TotalCategoria FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'group by productos.categoria";
 					
                         
 			resultado = sentencia.executeQuery(consultaSQL);
@@ -75,10 +75,17 @@ public class DAOInformes {
                           int i;
                         		                       
                         for (i=0; i<resultado2.getInt(1);i++){
-                            resultado.next();
                             
-                            Categoria.add(resultado.getString(1));
-                            ventas.add(resultado.getInt(2));
+                            if(resultado.next()){
+                               
+
+                                Categoria.add(resultado.getString(1));
+                                ventas.add(resultado.getInt(2));
+                                 resultado.next();
+                            }else{
+                            
+                            }
+                            
                             
                         }
                         
@@ -99,6 +106,114 @@ public class DAOInformes {
 
 
 	}
+     
+     
+    public static ArrayList ConsultarInformeCostos(String fecha1, String fecha2) {
+         
+         String text;
+         
+          ArrayList<Integer> ventas = new ArrayList<>();
+          ArrayList<String> Categoria = new ArrayList<>();
+          ArrayList<Object> Resultado = new ArrayList<>();
+
+		try {
+
+			// ARMA LA SENTENCIA DE INSERCCION
+                        String Consultanumerofilas="SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'";
+			String consultaSQL = "SELECT productos.categoria, SUM(ventaproducto.cppcostos) as TotalCategoria FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'group by productos.categoria";
+					
+                        
+			resultado = sentencia.executeQuery(consultaSQL);
+                        resultado2 = sentencia.executeQuery(Consultanumerofilas);
+                        resultado2.next();
+                          int i;
+                        		                       
+                        for (i=0; i<resultado2.getInt(1);i++){
+                            
+                            if (resultado.next()){
+                            
+                            
+                            Categoria.add(resultado.getString(1));
+                            ventas.add(resultado.getInt(2));
+                            resultado.next();
+                            }else{}
+                            
+                            
+                        }
+                        
+                        Resultado.add(Categoria);
+                        Resultado.add(ventas);
+                   
+                        
+		} catch (SQLException e) {
+                        e.printStackTrace();
+			System.out.println(e);
+
+			JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
+
+		}
+         return Resultado;  
+               
+               
+
+
+	}
+    
+    
+    public static ArrayList ConsultarInformeCompra(String fecha1, String fecha2) {
+         
+         String text;
+         
+          ArrayList<Integer> compra = new ArrayList<>();
+          ArrayList<String> Categoria = new ArrayList<>();
+          ArrayList<Object> Resultado = new ArrayList<>();
+
+		try {
+
+			// ARMA LA SENTENCIA DE INSERCCION
+                        String Consultanumerofilas="SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'";
+			String consultaSQL = "SELECT productos.nombreproducto, SUM(compraproducto.totalcompra) as TotalCategoria FROM productos INNER JOIN compraproducto ON productos.codigo = compraproducto.codigoproducto INNER JOIN compra on compraproducto.codigocompra = compra.codigocompra where compra.fecha between'"+fecha1+"'and'"+fecha2+"'group by productos.nombreproducto";
+					
+                        
+			resultado = sentencia.executeQuery(consultaSQL);
+                        resultado2 = sentencia.executeQuery(Consultanumerofilas);
+                        resultado2.next();
+                        
+                        
+                          int i;
+                        		                       
+                        for (i=0; i<resultado2.getInt(1);i++){
+                            
+                            if(resultado.next()){
+                                
+                                Categoria.add(resultado.getString(1));
+                                compra.add(resultado.getInt(2));
+                                resultado.next();
+                            }else{}
+                            
+                          
+                            
+                           
+                        }
+                        
+                        Resultado.add(Categoria);
+                        Resultado.add(compra);
+                   
+                        
+		} catch (SQLException e) {
+                        e.printStackTrace();
+			System.out.println(e);
+
+			JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
+
+		}
+         return Resultado;  
+               
+               
+
+
+	}
+     
      
      
      
