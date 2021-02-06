@@ -7,6 +7,7 @@ package vista;
 
 import Logica.CPP;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Compra;
@@ -69,7 +70,10 @@ public class GUICompra extends javax.swing.JFrame {
         jTextField1FechaVencimiento = new javax.swing.JTextField();
         jTextField2FechaAviso = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,6 +132,12 @@ public class GUICompra extends javax.swing.JFrame {
         jButtonBuscarCompra.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonBuscarCompra.setText("Buscar");
         getContentPane().add(jButtonBuscarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+
+        jTextField1CodigoCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1CodigoCompraKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1CodigoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 100, -1));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -137,12 +147,29 @@ public class GUICompra extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel2.setText("Precio de compra");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        jTextField2PrecioDeCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2PrecioDeCompraKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField2PrecioDeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel3.setText("cantidad");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 60, -1));
-        getContentPane().add(jTextField3Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 100, -1));
+
+        jTextField3Cantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3CantidadActionPerformed(evt);
+            }
+        });
+        jTextField3Cantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3CantidadKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField3Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 100, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setText("codigo producto");
@@ -151,6 +178,11 @@ public class GUICompra extends javax.swing.JFrame {
         jTextField1codigoproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1codigoproductoActionPerformed(evt);
+            }
+        });
+        jTextField1codigoproducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1codigoproductoKeyTyped(evt);
             }
         });
         getContentPane().add(jTextField1codigoproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 100, -1));
@@ -167,16 +199,17 @@ public class GUICompra extends javax.swing.JFrame {
                 jButtonAñadirCompraProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
+        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, -1, -1));
 
         jButtonFinalizarCompra.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonFinalizarCompra.setText("Finalizar compra");
+        jButtonFinalizarCompra.setEnabled(false);
         jButtonFinalizarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonFinalizarCompraActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonFinalizarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 150, -1));
+        getContentPane().add(jButtonFinalizarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 170, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/640-6400983_0-carrito-de-compras-rosado_opt.jpg"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 190, 180));
@@ -188,6 +221,17 @@ public class GUICompra extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel10.setText("Fecha de Aviso");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 100, -1));
+
+        jTextField1FechaVencimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1FechaVencimientoActionPerformed(evt);
+            }
+        });
+        jTextField1FechaVencimiento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1FechaVencimientoKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1FechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 110, -1));
         getContentPane().add(jTextField2FechaAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 110, -1));
 
@@ -196,9 +240,24 @@ public class GUICompra extends javax.swing.JFrame {
         jLabel11.setText("Compra de productos");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 480, 30));
 
+        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("dia/mes/año");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 110, -1));
+
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("dia/mes/año");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 110, -1));
+
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 460));
+
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("dia/mes/año");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 110, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -206,6 +265,23 @@ public class GUICompra extends javax.swing.JFrame {
 
     private void jButtonAñadirCompraProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCompraProductoActionPerformed
         // TODO add your handling code here:
+        
+        if ( jTextField1CodigoCompra.getText().isEmpty() ||
+              jTextField4NombreProducto.getText().isEmpty() ||
+              jTextField3Cantidad.getText().isEmpty() ||
+              jTextField2PrecioDeCompra.getText().isEmpty() ||
+              jTextFieldFecha.getText().isEmpty() ||
+              jTextField1codigoproducto.getText().isEmpty() ||
+              jTextField1FechaVencimiento.getText().isEmpty() ||
+              jTextField2FechaAviso.getText().isEmpty()    
+                               
+                ){
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos");
+                
+        }else{
+            
+            
+        
         DefaultTableModel modelo=(DefaultTableModel) jTable2TablaCompras.getModel(); 
         Object [] fila=new Object[9];
         
@@ -233,6 +309,9 @@ public class GUICompra extends javax.swing.JFrame {
         modelo.addRow(fila); 
         
         jTable2TablaCompras.setModel(modelo);
+        jButtonFinalizarCompra.setEnabled(true);
+        
+        }
     }//GEN-LAST:event_jButtonAñadirCompraProductoActionPerformed
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
@@ -295,6 +374,92 @@ public class GUICompra extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1codigoproductoActionPerformed
 
+    private void jTextField1codigoproductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1codigoproductoKeyTyped
+        // TODO add your handling code here:
+      char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+        
+        
+    }//GEN-LAST:event_jTextField1codigoproductoKeyTyped
+
+    private void jTextField1CodigoCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1CodigoCompraKeyTyped
+        // TODO add your handling code here:
+        
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextField1CodigoCompraKeyTyped
+
+    private void jTextField2PrecioDeCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2PrecioDeCompraKeyTyped
+        // TODO add your handling code here:
+        
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter))
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+      
+      
+    }//GEN-LAST:event_jTextField2PrecioDeCompraKeyTyped
+
+    private void jTextField3CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3CantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3CantidadActionPerformed
+
+    private void jTextField3CantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3CantidadKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter))
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField3CantidadKeyTyped
+
+    private void jTextField1FechaVencimientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaVencimientoKeyTyped
+        // TODO add your handling code here:
+        
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField1FechaVencimientoKeyTyped
+
+    private void jTextField1FechaVencimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1FechaVencimientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1FechaVencimientoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -338,6 +503,9 @@ public class GUICompra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

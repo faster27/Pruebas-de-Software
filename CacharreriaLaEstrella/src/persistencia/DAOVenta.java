@@ -111,7 +111,7 @@ public class DAOVenta {
 
 			System.out.println(e);
 
-			JOptionPane.showMessageDialog(null, "Producto comprado con exito ");
+			JOptionPane.showMessageDialog(null, "Producto vendido con exito ");
 
 		}
 	}

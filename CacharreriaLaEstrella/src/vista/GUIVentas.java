@@ -6,6 +6,7 @@
 package vista;
 
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
@@ -105,6 +106,11 @@ public class GUIVentas extends javax.swing.JFrame {
                 jTextFieldCodigoProductoActionPerformed(evt);
             }
         });
+        jTextFieldCodigoProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCodigoProductoKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextFieldCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 100, -1));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -130,7 +136,19 @@ public class GUIVentas extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setText("Codigo Venta");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+
+        jTextFieldCodigoVenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCodigoVentaKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextFieldCodigoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 100, -1));
+
+        jTextFieldCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCantidadKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextFieldCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 100, 20));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -165,6 +183,11 @@ public class GUIVentas extends javax.swing.JFrame {
                 jTextFieldPrecioVentaActionPerformed(evt);
             }
         });
+        jTextFieldPrecioVenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldPrecioVentaKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextFieldPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 100, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/result.png"))); // NOI18N
@@ -173,6 +196,7 @@ public class GUIVentas extends javax.swing.JFrame {
 
         jButton3Vender.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton3Vender.setText("Vender");
+        jButton3Vender.setEnabled(false);
         jButton3Vender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3VenderActionPerformed(evt);
@@ -231,6 +255,19 @@ public class GUIVentas extends javax.swing.JFrame {
 
     private void jButton2AñadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2AñadirProductoActionPerformed
         // TODO add your handling code here:
+        
+        if (jTextFieldCodigoProducto.getText().isEmpty() ||
+              jTextFieldCodigoVenta.getText().isEmpty() ||
+               jTextFieldNombreProducto.getText().isEmpty() ||
+               jTextFieldCantidad.getText().isEmpty() ||
+                jTextField5Fecha.getText().isEmpty() ||
+               jTextFieldPrecioVenta.getText().isEmpty() ){
+            
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos");
+        
+        
+        }else{
+        
         DefaultTableModel modelo=(DefaultTableModel) jTable1ProductosVenta.getModel();
         Object [] fila=new Object[7];
 
@@ -251,6 +288,9 @@ public class GUIVentas extends javax.swing.JFrame {
         modelo.addRow(fila);
 
         jTable1ProductosVenta.setModel(modelo);
+        
+        jButton3Vender.setEnabled(true);
+        }
     }//GEN-LAST:event_jButton2AñadirProductoActionPerformed
 
     private void jTextFieldCodigoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCodigoProductoActionPerformed
@@ -264,6 +304,59 @@ public class GUIVentas extends javax.swing.JFrame {
     private void jTextField5FechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5FechaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5FechaActionPerformed
+
+    private void jTextFieldCodigoProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoProductoKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextFieldCodigoProductoKeyTyped
+
+    private void jTextFieldCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCantidadKeyTyped
+        // TODO add your handling code here:
+        
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextFieldCantidadKeyTyped
+
+    private void jTextFieldPrecioVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrecioVentaKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextFieldPrecioVentaKeyTyped
+
+    private void jTextFieldCodigoVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoVentaKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextFieldCodigoVentaKeyTyped
 
     /**
      * @param args the command line arguments

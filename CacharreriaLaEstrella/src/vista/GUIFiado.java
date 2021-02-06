@@ -37,7 +37,7 @@ public class GUIFiado extends javax.swing.JFrame {
         jTextField2nombrecliente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextField3totalfiado = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButton1ActualizarFiado = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3RegistrarFiado = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,6 +53,17 @@ public class GUIFiado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel1.setText("Cedula");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 64, -1));
+
+        jTextField1cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1cedulaActionPerformed(evt);
+            }
+        });
+        jTextField1cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1cedulaKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 80, -1));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -65,16 +76,21 @@ public class GUIFiado extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jTextField3totalfiado.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        getContentPane().add(jTextField3totalfiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 82, -1));
-
-        jButton1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButton1.setText("Actualizar fiado");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jTextField3totalfiado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3totalfiadoKeyTyped(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
+        getContentPane().add(jTextField3totalfiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 82, -1));
+
+        jButton1ActualizarFiado.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jButton1ActualizarFiado.setText("Actualizar fiado");
+        jButton1ActualizarFiado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActualizarFiadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1ActualizarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
 
         jButton2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton2.setText("Abonar");
@@ -138,6 +154,16 @@ public class GUIFiado extends javax.swing.JFrame {
     private void jButton3RegistrarFiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3RegistrarFiadoActionPerformed
         // TODO add your handling code here:
         
+        
+        if (jTextField1cedula.getText().isEmpty() ||
+            jTextField2nombrecliente.getText().isEmpty() ||
+            jTextField3totalfiado.getText().isEmpty()
+                ){
+                
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos");
+        
+        }else {
+        
          Fiado nuevoFiado= new Fiado();
             
             nuevoFiado.setCedula(Integer.parseInt(jTextField1cedula.getText()));
@@ -148,35 +174,94 @@ public class GUIFiado extends javax.swing.JFrame {
             
             DAOFiado.conexion();
             DAOFiado.GuardarFiado(nuevoFiado);
-           
+        }
         
     }//GEN-LAST:event_jButton3RegistrarFiadoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        int cedula=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual abonar"));
-        double abono=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a abonar"));
+        String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual abonar");
+        String abono=JOptionPane.showInputDialog("Ingrese el valor a abonar");
+       
+        try {
+            
+             int cedula1 = Integer.parseInt(cedula);
+             double abono1=Double.parseDouble(abono);
+              DAOFiado.conexion();
+              DAOFiado.ActualizarAbono(abono1, cedula1);
         
-        DAOFiado.conexion();
-        DAOFiado.ActualizarAbono(abono, cedula);
+        }
+        catch (NumberFormatException e) {
+          
+            JOptionPane.showMessageDialog(this, "Los datos ingresados son erroneos o los campos estan vacios");
+        }
+        
+        
+       
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActualizarFiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActualizarFiadoActionPerformed
         // TODO add your handling code here:
         
-        int cedula=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual fiara"));
-        double Fiadonuevo=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor del nuevo fiado"));
+        String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual fiara");
+        String Fiadonuevo=JOptionPane.showInputDialog("Ingrese el valor del nuevo fiado");
         
-        DAOFiado.conexion();
-        DAOFiado.ActualizarFiado(Fiadonuevo, cedula);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        try {
+            
+             int cedula1 = Integer.parseInt(cedula);
+             double Fiadonuevo1=Double.parseDouble(Fiadonuevo);
+              DAOFiado.conexion();
+              DAOFiado.ActualizarFiado(Fiadonuevo1, cedula1);
+        
+        }
+        catch (NumberFormatException e) {
+          
+            JOptionPane.showMessageDialog(this, "Los datos ingresados son erroneos o los campos estan vacios");
+        }
+       
+        
+        
+       
+    }//GEN-LAST:event_jButton1ActualizarFiadoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
     this.setVisible(false);        
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1cedulaKeyTyped
+        // TODO add your handling code here:
+        
+        char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextField1cedulaKeyTyped
+
+    private void jTextField3totalfiadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3totalfiadoKeyTyped
+        // TODO add your handling code here:
+        
+        char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextField3totalfiadoKeyTyped
+
+    private void jTextField1cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1cedulaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,7 +299,7 @@ public class GUIFiado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton1ActualizarFiado;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton3RegistrarFiado;

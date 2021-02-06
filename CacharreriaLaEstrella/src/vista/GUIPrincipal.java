@@ -132,6 +132,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         
         
         
+        
     }//GEN-LAST:event_jButtonCompraActionPerformed
 
     private void jButtonProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProductosActionPerformed

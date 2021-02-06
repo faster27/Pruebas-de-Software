@@ -6,6 +6,7 @@
 package vista;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -86,6 +87,12 @@ public class GUIProductosVencimiento extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1Consultar);
         jButton1Consultar.setBounds(10, 110, 130, 29);
+
+        jTextField1FechaAviso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1FechaAvisoKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1FechaAviso);
         jTextField1FechaAviso.setBounds(10, 144, 130, 20);
 
@@ -104,6 +111,11 @@ public class GUIProductosVencimiento extends javax.swing.JFrame {
 
     private void jButton1ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarActionPerformed
         // TODO add your handling code here:
+        
+        if (jTextField1FechaAviso.getText().isEmpty()){
+        
+            JOptionPane.showMessageDialog(this, "El campo fecha debe estar lleno");
+        }else{
         
         ArrayList<ArrayList> ProductosVencerse = new ArrayList<>();
         ArrayList<String> ProductosVencerse2 = new ArrayList<>();
@@ -138,13 +150,28 @@ public class GUIProductosVencimiento extends javax.swing.JFrame {
            ProductosVencerse2.remove(0);
            ProductosVencerse2.remove(0);
         }
-        
+        } 
     }//GEN-LAST:event_jButton1ConsultarActionPerformed
 
     private void jButton1RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1RegresarActionPerformed
         // TODO add your handling code here:
           this.setVisible(false);
     }//GEN-LAST:event_jButton1RegresarActionPerformed
+
+    private void jTextField1FechaAvisoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaAvisoKeyTyped
+        // TODO add your handling code here:
+        char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField1FechaAvisoKeyTyped
 
     /**
      * @param args the command line arguments

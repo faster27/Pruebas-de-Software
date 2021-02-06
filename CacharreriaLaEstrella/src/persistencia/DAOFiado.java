@@ -184,7 +184,7 @@ public class DAOFiado {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
                        
-			System.out.println(e);
+			System.out.println("El cliente no tiene un fiado que actualizar");
 		}
         
         

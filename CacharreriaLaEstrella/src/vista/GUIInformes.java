@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import persistencia.DAOInformes;
 
@@ -84,6 +85,17 @@ public class GUIInformes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField1FechaUnoVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1FechaUnoVentasActionPerformed(evt);
+            }
+        });
+        jTextField1FechaUnoVentas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1FechaUnoVentasKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1FechaUnoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, -1));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -93,6 +105,11 @@ public class GUIInformes extends javax.swing.JFrame {
         jTextField2FechaDosVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2FechaDosVentasActionPerformed(evt);
+            }
+        });
+        jTextField2FechaDosVentas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2FechaDosVentasKeyTyped(evt);
             }
         });
         getContentPane().add(jTextField2FechaDosVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 98, -1));
@@ -146,12 +163,24 @@ public class GUIInformes extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Consultar informe Costos");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 320, 30));
+
+        jTextField1FechaUnoCostos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1FechaUnoCostosKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1FechaUnoCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 80, -1));
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Fecha inicio");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 80, -1));
+
+        jTextField2FechaDosCostos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2FechaDosCostosKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField2FechaDosCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 98, -1));
 
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -209,12 +238,24 @@ public class GUIInformes extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Consultar informe Compras");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 320, 30));
+
+        jTextField1FechaUnoCompras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1FechaUnoComprasKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1FechaUnoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 80, -1));
 
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Fecha inicio");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 80, -1));
+
+        jTextField2FechaDosCompras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2FechaDosComprasKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField2FechaDosCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 98, -1));
 
         jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -235,6 +276,12 @@ public class GUIInformes extends javax.swing.JFrame {
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Fecha inicio");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 80, -1));
+
+        jTextField1FechaUnoMasVendido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1FechaUnoMasVendidoKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField1FechaUnoMasVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 80, -1));
 
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -244,6 +291,11 @@ public class GUIInformes extends javax.swing.JFrame {
         jTextField2FechaDosMasVendido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2FechaDosMasVendidoActionPerformed(evt);
+            }
+        });
+        jTextField2FechaDosMasVendido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2FechaDosMasVendidoKeyTyped(evt);
             }
         });
         getContentPane().add(jTextField2FechaDosMasVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 98, -1));
@@ -283,6 +335,12 @@ public class GUIInformes extends javax.swing.JFrame {
 
     private void jButton1ConsultarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarVentasActionPerformed
         // TODO add your handling code here:
+        
+        if (jTextField1FechaUnoVentas.getText().isEmpty() || jTextField2FechaDosVentas.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Los campos fecha deben estar llenos");
+        }else{
+        
+        
         ArrayList<Object> Resultadoventas = new ArrayList<>();
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> ventas = new ArrayList<>();
@@ -309,6 +367,7 @@ public class GUIInformes extends javax.swing.JFrame {
         }
         
          guardarTablaVentas(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
+        }
     }//GEN-LAST:event_jButton1ConsultarVentasActionPerformed
 
     private void jButton1RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1RegresarActionPerformed
@@ -318,6 +377,11 @@ public class GUIInformes extends javax.swing.JFrame {
 
     private void jButton1ConsultarCostosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarCostosActionPerformed
         // TODO add your handling code here:
+        
+        if (jTextField1FechaUnoCostos.getText().isEmpty() || jTextField2FechaDosCostos.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Los campos fecha deben estar llenos");
+        }
+        else{
          ArrayList<Object> ResultadoCostos = new ArrayList<>();
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> Costos = new ArrayList<>();
@@ -344,12 +408,18 @@ public class GUIInformes extends javax.swing.JFrame {
         }
         
          guardarTablaCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
-        
+         
+        }
     }//GEN-LAST:event_jButton1ConsultarCostosActionPerformed
 
     private void jButton1ConsultarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarComprasActionPerformed
         // TODO add your handling code here:
         
+        if (jTextField1FechaUnoCompras.getText().isEmpty() || jTextField2FechaDosCompras.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Los campos fecha deben estar llenos");
+        
+        }else{
         ArrayList<Object> ResultadoCompra = new ArrayList<>();
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> Compra = new ArrayList<>();
@@ -376,7 +446,7 @@ public class GUIInformes extends javax.swing.JFrame {
         }
         
           guardarTablaCompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
-        
+        }
     }//GEN-LAST:event_jButton1ConsultarComprasActionPerformed
 
     private void jTextField2FechaDosVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2FechaDosVentasActionPerformed
@@ -389,6 +459,12 @@ public class GUIInformes extends javax.swing.JFrame {
 
     private void jButton1ConsultarMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ConsultarMasVendidoActionPerformed
         // TODO add your handling code here:
+        
+        if(jTextField1FechaUnoMasVendido.getText().isEmpty() || jTextField2FechaDosMasVendido.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Los campos fecha deben estar llenos");
+        
+        }else{
         ArrayList<Object> ResultadoMasVendidos = new ArrayList<>();
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> MasVendidos = new ArrayList<>();
@@ -414,8 +490,121 @@ public class GUIInformes extends javax.swing.JFrame {
             jTableMasVendido.setValueAt(MasVendidos.get(i), i ,1);
         }
         
-        
+        }
     }//GEN-LAST:event_jButton1ConsultarMasVendidoActionPerformed
+
+    private void jTextField1FechaUnoVentasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaUnoVentasKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField1FechaUnoVentasKeyTyped
+
+    private void jTextField2FechaDosVentasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2FechaDosVentasKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField2FechaDosVentasKeyTyped
+
+    private void jTextField1FechaUnoCostosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaUnoCostosKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1FechaUnoCostosKeyTyped
+
+    private void jTextField2FechaDosCostosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2FechaDosCostosKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField2FechaDosCostosKeyTyped
+
+    private void jTextField1FechaUnoMasVendidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaUnoMasVendidoKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField1FechaUnoMasVendidoKeyTyped
+
+    private void jTextField2FechaDosMasVendidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2FechaDosMasVendidoKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField2FechaDosMasVendidoKeyTyped
+
+    private void jTextField1FechaUnoComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaUnoComprasKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField1FechaUnoComprasKeyTyped
+
+    private void jTextField2FechaDosComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2FechaDosComprasKeyTyped
+        // TODO add your handling code here:
+         char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada  es un digito
+     // Verificar si la tecla pulsada no es un digito
+      if(Character.isDigit(caracter) || caracter=='/')
+      {
+          
+      }else{
+          getToolkit().beep();
+          evt.consume();  // ignorar el evento de teclado
+      }
+    }//GEN-LAST:event_jTextField2FechaDosComprasKeyTyped
+
+    private void jTextField1FechaUnoVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1FechaUnoVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1FechaUnoVentasActionPerformed
 
     /**
      * @param args the command line arguments

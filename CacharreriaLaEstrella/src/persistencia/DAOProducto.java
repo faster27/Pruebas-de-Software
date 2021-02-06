@@ -178,7 +178,7 @@ public class DAOProducto {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-                         System.out.println("hola");
+                        
 			System.out.println(e);
 		}
         

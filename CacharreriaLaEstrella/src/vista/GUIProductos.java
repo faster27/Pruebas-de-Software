@@ -9,7 +9,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
+
 import persistencia.DAOProducto;
+
 
 /**
  *
@@ -105,15 +107,33 @@ public class GUIProductos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 210, -1));
+
+        jTextFieldCodigoProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCodigoProductoActionPerformed(evt);
+            }
+        });
+        jTextFieldCodigoProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCodigoProductoKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextFieldCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 210, -1));
 
         jLabelPrecioVenta.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabelPrecioVenta.setText("Precio de Venta");
         getContentPane().add(jLabelPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jTextFieldPrecioVenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldPrecioVentaKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextFieldPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 210, -1));
 
         jButtonRegistrarProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonRegistrarProducto.setText("Registrar Producto");
+        jButtonRegistrarProducto.setEnabled(false);
         jButtonRegistrarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegistrarProductoActionPerformed(evt);
@@ -155,9 +175,16 @@ public class GUIProductos extends javax.swing.JFrame {
         jLabel4.setText("Cpp");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 60, -1));
 
+        jTextField1Cpp.setEditable(false);
+        jTextField1Cpp.setText("0");
         jTextField1Cpp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1CppActionPerformed(evt);
+            }
+        });
+        jTextField1Cpp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1CppKeyTyped(evt);
             }
         });
         getContentPane().add(jTextField1Cpp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 210, -1));
@@ -168,6 +195,11 @@ public class GUIProductos extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
         jTextField1.setText("0");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 210, -1));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -227,6 +259,14 @@ public class GUIProductos extends javax.swing.JFrame {
     private void jButtonAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarProductoActionPerformed
         // TODO add your handling code here:
 
+        if (jTextFieldCodigoProducto.getText().isEmpty() ||
+             jTextFieldNombreProducto.getText().isEmpty() ||
+              jTextFieldPrecioVenta.getText().isEmpty() ||
+               jTextField1Cpp.getText().isEmpty() ){
+        
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos");
+        }else{
+        
         DefaultTableModel modelo=(DefaultTableModel) jTableTablaProductos.getModel();
 
         Object [] fila=new Object[5];
@@ -244,6 +284,9 @@ public class GUIProductos extends javax.swing.JFrame {
         modelo.addRow(fila);
 
         jTableTablaProductos.setModel(modelo);
+        
+        jButtonRegistrarProducto.setEnabled(true);
+        }
 
     }//GEN-LAST:event_jButtonAgregarProductoActionPerformed
 
@@ -254,6 +297,53 @@ public class GUIProductos extends javax.swing.JFrame {
     private void jTextField1CppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1CppActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1CppActionPerformed
+
+    private void jTextFieldCodigoProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoProductoKeyTyped
+        // TODO add your handling code here:
+          char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextFieldCodigoProductoKeyTyped
+
+    private void jTextFieldPrecioVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrecioVentaKeyTyped
+        // TODO add your handling code here:
+          char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextFieldPrecioVentaKeyTyped
+
+    private void jTextField1CppKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1CppKeyTyped
+        // TODO add your handling code here:
+          char caracter = evt.getKeyChar();
+
+      // Verificar si la tecla pulsada no es un digito
+      if(((caracter < '0') || (caracter > '9')) )
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }else{
+        
+      }
+    }//GEN-LAST:event_jTextField1CppKeyTyped
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextFieldCodigoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCodigoProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCodigoProductoActionPerformed
 
     /**
      * @param args the command line arguments
