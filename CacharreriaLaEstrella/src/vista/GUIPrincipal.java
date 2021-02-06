@@ -176,7 +176,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
     private void jButton1AvisoVencimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1AvisoVencimientoActionPerformed
         // TODO add your handling code here:
-        ProductosVencimiento NuevaVentana= new ProductosVencimiento();
+        GUIProductosVencimiento NuevaVentana= new GUIProductosVencimiento();
         
         NuevaVentana.setVisible(true);
         

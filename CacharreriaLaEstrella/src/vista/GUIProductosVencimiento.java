@@ -15,12 +15,12 @@ import persistencia.DAOProducto;
  *
  * @author dcorr
  */
-public class ProductosVencimiento extends javax.swing.JFrame {
+public class GUIProductosVencimiento extends javax.swing.JFrame {
 
     /**
      * Creates new form ProductosVencimiento
      */
-    public ProductosVencimiento() {
+    public GUIProductosVencimiento() {
         initComponents();
     }
 
@@ -42,6 +42,7 @@ public class ProductosVencimiento extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 300));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -96,7 +97,7 @@ public class ProductosVencimiento extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 610, 260);
+        jLabel1.setBounds(-20, -10, 650, 290);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -162,20 +163,21 @@ public class ProductosVencimiento extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIProductosVencimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProductosVencimiento().setVisible(true);
+                new GUIProductosVencimiento().setVisible(true);
             }
         });
     }
