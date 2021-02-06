@@ -193,13 +193,13 @@ public class GUICompra extends javax.swing.JFrame {
         getContentPane().add(jTextField4NombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 100, -1));
 
         jButtonAñadirCompraProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButtonAñadirCompraProducto.setText("Añadir");
+        jButtonAñadirCompraProducto.setText("Agregar compra");
         jButtonAñadirCompraProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAñadirCompraProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, -1, -1));
+        getContentPane().add(jButtonAñadirCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
 
         jButtonFinalizarCompra.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButtonFinalizarCompra.setText("Finalizar compra");

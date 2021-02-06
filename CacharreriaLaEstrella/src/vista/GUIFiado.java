@@ -84,13 +84,13 @@ public class GUIFiado extends javax.swing.JFrame {
         getContentPane().add(jTextField3totalfiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 82, -1));
 
         jButton1ActualizarFiado.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButton1ActualizarFiado.setText("Actualizar fiado");
+        jButton1ActualizarFiado.setText("Actualizar fiado existente");
         jButton1ActualizarFiado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActualizarFiadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1ActualizarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
+        getContentPane().add(jButton1ActualizarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 220, -1));
 
         jButton2.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton2.setText("Abonar");

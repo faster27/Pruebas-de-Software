@@ -164,13 +164,13 @@ public class GUIVentas extends javax.swing.JFrame {
         getContentPane().add(jTextField5Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 100, 20));
 
         jButton2AñadirProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButton2AñadirProducto.setText("Añadir producto");
+        jButton2AñadirProducto.setText("Agregar producto");
         jButton2AñadirProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2AñadirProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2AñadirProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, 30));
+        getContentPane().add(jButton2AñadirProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, 30));
         getContentPane().add(jTextFieldNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 100, -1));
 
         jLabel8.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
