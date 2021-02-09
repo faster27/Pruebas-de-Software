@@ -51,7 +51,6 @@ public class GUICompra extends javax.swing.JFrame {
         jButtonRegresar = new javax.swing.JButton();
         jTextFieldFecha = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButtonBuscarCompra = new javax.swing.JButton();
         jTextField1CodigoCompra = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -128,10 +127,6 @@ public class GUICompra extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel5.setText("Fecha");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-
-        jButtonBuscarCompra.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButtonBuscarCompra.setText("Buscar");
-        getContentPane().add(jButtonBuscarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         jTextField1CodigoCompra.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -497,7 +492,6 @@ public class GUICompra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAñadirCompraProducto;
-    private javax.swing.JButton jButtonBuscarCompra;
     private javax.swing.JButton jButtonFinalizarCompra;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabel1;

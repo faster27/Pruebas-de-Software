@@ -6,6 +6,7 @@
 package vista;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Fiado;
 import persistencia.DAOFiado;
 
@@ -41,7 +42,7 @@ public class GUIFiado extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3RegistrarFiado = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable1Fiados = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton4ConsultarFiado = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -110,23 +111,23 @@ public class GUIFiado extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3RegistrarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 160, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1Fiados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Cedula", "Nombre", "Valor Fiado", "Abono"
+                "Cedula", "Nombre", "Valor Fiado", "Abono", "Deuda"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTable1Fiados);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 232, 450, 140));
 
@@ -141,6 +142,11 @@ public class GUIFiado extends javax.swing.JFrame {
 
         jButton4ConsultarFiado.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jButton4ConsultarFiado.setText("Consultar fiado");
+        jButton4ConsultarFiado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ConsultarFiadoActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4ConsultarFiado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 160, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/blue-wave-background-photoshop-backgrounds_opt.jpg"))); // NOI18N
@@ -183,13 +189,28 @@ public class GUIFiado extends javax.swing.JFrame {
         
         String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual abonar");
         String abono=JOptionPane.showInputDialog("Ingrese el valor a abonar");
+        
+ 
        
         try {
             
              int cedula1 = Integer.parseInt(cedula);
              double abono1=Double.parseDouble(abono);
-              DAOFiado.conexion();
-              DAOFiado.ActualizarAbono(abono1, cedula1);
+             
+             double abono2= DAOFiado.consultarAbono(cedula1);
+             double Fiado=DAOFiado.consultarFiado(cedula1);
+             
+             double Deuda = Fiado-abono2;
+             
+             if (abono1 <= Deuda ){
+                DAOFiado.conexion();
+                DAOFiado.ActualizarAbono(abono1, cedula1);
+             
+             }else {
+                 JOptionPane.showMessageDialog(this, "el valor a abonar es  mayor que el valor deuda");
+             }
+             
+              
         
         }
         catch (NumberFormatException e) {
@@ -263,6 +284,48 @@ public class GUIFiado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1cedulaActionPerformed
 
+    private void jButton4ConsultarFiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ConsultarFiadoActionPerformed
+        // TODO add your handling code here:
+        
+        
+        String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual consultara");
+        
+        
+        Fiado cliente = new Fiado();
+         
+        try {
+            
+            int cedula1 = Integer.parseInt(cedula);
+             
+            DAOFiado.conexion();
+            cliente = DAOFiado.consultarCliente(cedula1);
+             
+            DefaultTableModel modelo= (DefaultTableModel) jTable1Fiados.getModel();
+            
+            if (modelo.getRowCount() >0){
+             modelo.removeRow(0);
+            
+            }
+            
+           
+            modelo.addRow(new Object[]{"","","","",""});
+
+            jTable1Fiados.setModel(modelo);   
+             
+            jTable1Fiados.setValueAt(cliente.getCedula(), 0 ,0);
+            jTable1Fiados.setValueAt(cliente.getNombrecliente(), 0 ,1);
+            jTable1Fiados.setValueAt(cliente.getCantidadfiada(), 0 ,2); 
+            jTable1Fiados.setValueAt(cliente.getAbono(), 0 ,3);
+            jTable1Fiados.setValueAt(cliente.getCantidadfiada()-cliente.getAbono(), 0 ,4);
+            
+        }
+        catch (NumberFormatException e) {
+          
+            JOptionPane.showMessageDialog(this, "Los datos ingresados son erroneos o los campos estan vacios");
+        } 
+        
+    }//GEN-LAST:event_jButton4ConsultarFiadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -309,7 +372,7 @@ public class GUIFiado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable1Fiados;
     private javax.swing.JTextField jTextField1cedula;
     private javax.swing.JTextField jTextField2nombrecliente;
     private javax.swing.JTextField jTextField3totalfiado;

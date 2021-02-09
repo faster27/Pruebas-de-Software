@@ -54,7 +54,6 @@ public class GUIVentas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButtonBuscarProducto = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextFieldCodigoVenta = new javax.swing.JTextField();
         jTextFieldCantidad = new javax.swing.JTextField();
@@ -128,10 +127,6 @@ public class GUIVentas extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel5.setText("Fecha");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, 20));
-
-        jButtonBuscarProducto.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButtonBuscarProducto.setText("Buscar");
-        getContentPane().add(jButtonBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setText("Codigo Venta");
@@ -396,7 +391,6 @@ public class GUIVentas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2AñadirProducto;
     private javax.swing.JButton jButton3Vender;
-    private javax.swing.JButton jButtonBuscarProducto;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

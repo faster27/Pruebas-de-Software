@@ -193,5 +193,41 @@ public class DAOFiado {
         
     }
     
+    public static Fiado consultarCliente(int cedula) {
+        int abono = 0;
+       // System.out.println(codigoProducto);
+       
+        Fiado cliente= new Fiado();
+        
+        String Sql = "select * from ventasfiadas where (cedula="+cedula+")";
+        
+        try {
+                        
+			resultado = sentencia.executeQuery(Sql);
+                        
+			resultado.next();
+                       
+                        cliente.setCedula(resultado.getInt(1));
+                        cliente.setNombrecliente(resultado.getString(2));
+                        cliente.setCantidadfiada(resultado.getDouble(3));
+                        cliente.setAbono(resultado.getDouble(4));
+			
+                        
+                        
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+                       
+			System.out.println(e);
+		}
+        
+        
+        return cliente;
+        
+        
+    }
+    
+    
     
 }
