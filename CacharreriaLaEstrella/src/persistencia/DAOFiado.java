@@ -173,12 +173,14 @@ public class DAOFiado {
                         
 			resultado = sentencia.executeQuery(Sql);
                         
+                        if (resultado.next()){
+                        
 			resultado.next();
                        
 
 			fiado = resultado.getInt(1);
                         
-                        
+                        }
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -205,13 +207,14 @@ public class DAOFiado {
                         
 			resultado = sentencia.executeQuery(Sql);
                         
+                        if(resultado.next()){
 			resultado.next();
                        
                         cliente.setCedula(resultado.getInt(1));
                         cliente.setNombrecliente(resultado.getString(2));
                         cliente.setCantidadfiada(resultado.getDouble(3));
                         cliente.setAbono(resultado.getDouble(4));
-			
+                        }
                         
                         
 
