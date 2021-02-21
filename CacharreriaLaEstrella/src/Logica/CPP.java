@@ -15,7 +15,7 @@ public class CPP {
     
     
     
-    int pruebaJenkins;
+    int pruebaJenkins
     
     public static double ActualizarCpp(int CantidadEnStock, double CppActual, int UnidadesNuevas, double CostoCompraUnidad){
     
