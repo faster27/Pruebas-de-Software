@@ -28,7 +28,7 @@ public class DAOCompra {
     public static Statement sentencia = null;
     static ResultSet resultado = null;
     static String cadenaDriver = "org.postgresql.Driver";
-    
+  /*  
      public static void conexion() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 String clave = "1234";
@@ -49,7 +49,7 @@ public class DAOCompra {
 
 		}
 
-     }
+     }*/
     
       
     
