@@ -16,8 +16,9 @@ public class CacharreriaLaEstrella {
     /**
      * @param args the command line arguments
      */
-    
-    GUIPrincipal principal =new GUIPrincipal ();
+    public static void main(String[] args) {
+        GUIPrincipal principal =new GUIPrincipal ();
         principal.setVisible(true);
+    }
     
 }
