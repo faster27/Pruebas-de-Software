@@ -5,72 +5,79 @@
  */
 package modelo;
 
-/**
+/**.
  *
  * @author dcorr
  */
 public class Compra {
-    private  int codigoCompra;
-    private  double precioCompraProducto;
-    private  int cantidad;
-    private String fecha;
-
-   
-    private int codigoProducto;
+  private  int codigoCompra;
+  private  double precioCompraProducto;
+  private  int cantidad;
+  private String fecha; 
+  private int codigoProducto;
         
 
-    public Compra() {
+  public Compra() {
         
-    }
+  }
+  
+  /**
+   * 
+   * @param codigoCompra .
+   * @param precioCompraProducto .
+   * @param cantidad .
+   * @param fecha .
+   * @param codigoProducto . 
+   */
+  public Compra(int codigoCompra, double precioCompraProducto, 
+          int cantidad, String fecha,int codigoProducto) {
+       
+    this.codigoCompra = codigoCompra;
+    this.precioCompraProducto = precioCompraProducto;
+    this.cantidad = cantidad;
+    this.fecha = fecha;
+    this.codigoProducto = codigoProducto;
+  }
 
-    public Compra(int codigoCompra, double precioCompraProducto, int cantidad, String fecha,int codigoProducto) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        this.codigoCompra = codigoCompra;
-        this.precioCompraProducto = precioCompraProducto;
-        this.cantidad = cantidad;
-        this.fecha = fecha;
-        this.codigoProducto=codigoProducto;
-    }
-
-    public void setCodigoProducto(int codigoProducto) {
-        this.codigoProducto = codigoProducto;
-    }
+  public void setCodigoProducto(int codigoProducto) {
+    this.codigoProducto = codigoProducto;
+  }
     
-     public int getCodigoProducto() {
-        return codigoProducto;
-    }
+  public int getCodigoProducto() {
+    return codigoProducto;
+  }
 
-    public int getcodigoCompra() {
-        return codigoCompra;
-    }
+  public int getcodigoCompra() {
+    return codigoCompra;
+  }
 
-    public void setcodigoCompra(int id) {
-        this.codigoCompra = id;
-    }
+  public void setcodigoCompra(int id) {
+    this.codigoCompra = id;
+  }
 
-    public void setPrecioCompraProducto(double precioCompraProducto) {
-        this.precioCompraProducto = precioCompraProducto;
-    }
+  public void setPrecioCompraProducto(double precioCompraProducto) {
+    this.precioCompraProducto = precioCompraProducto;
+  }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
+  public void setCantidad(int cantidad) {
+    this.cantidad = cantidad;
+  }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+  public void setFecha(String fecha) {
+    this.fecha = fecha;
+  }
 
-    public double getPrecioCompraProducto() {
-        return precioCompraProducto;
-    }
+  public double getPrecioCompraProducto() {
+    return precioCompraProducto;
+  }
 
-    public int getCantidad() {
-        return cantidad;
-    }
+  public int getCantidad() {
+    return cantidad;
+  }
 
-    public String getFecha() {
-        return fecha;
-    }
-    
+  public String getFecha() {
+    return fecha;
+  }
+
     
 }
