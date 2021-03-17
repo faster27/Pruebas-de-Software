@@ -7,7 +7,7 @@ package modelo;
 
 /**.
  *
- * @author dcorr
+ * @author dcorr holaaaaaaaaaaaaaaaaaa
  */
 public class Compra {
   private  int codigoCompra;
