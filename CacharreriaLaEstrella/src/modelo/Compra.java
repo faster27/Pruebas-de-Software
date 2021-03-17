@@ -8,7 +8,7 @@ package modelo;
 
 /**.
  *
- * @author dcorr holaaaaaaaaaaaaaaaaaa
+ * @author dcorr En esta clase esta la definicion del objeto compra
  */
 public class Compra {
   private  int codigoCompra;
