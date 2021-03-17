@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package modelo;
 
 /**.
@@ -21,13 +22,13 @@ public class Compra {
         
   }
   
-  /**
+  /**.
    * 
-   * @param codigoCompra .
-   * @param precioCompraProducto .
-   * @param cantidad .
-   * @param fecha .
-   * @param codigoProducto . 
+   * @param codigoCompra Codigo para identificar la compra en l base de datos
+   * @param precioCompraProducto Precio por producto que esta incluido en la compra
+   * @param cantidad Cantidad del producto que esta en la compra
+   * @param fecha Fecha en la que se realizo la compra
+   * @param codigoProducto Codigo unico para identificar el producto en la BD
    */
   public Compra(int codigoCompra, double precioCompraProducto, 
           int cantidad, String fecha,int codigoProducto) {
