@@ -9,7 +9,7 @@ import vista.GUIPrincipal;
 
 /**.
  *
- * @author dcorr
+ * @author dcorr hola muchachos
  */
 public class CacharreriaLaEstrella {
 
