@@ -5,7 +5,7 @@
  */
 package vista;
 
-import Logica.CPP;
+import Logica.Cpp;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -356,7 +356,7 @@ public class GUICompra extends javax.swing.JFrame {
           
             
             double CppNuevo;
-            CppNuevo = CPP.ActualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
+            CppNuevo = Cpp.ActualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
             DAOProducto.conexion();
             DAOProducto.ActualizarCpp(nuevaCompra.getCodigoProducto(), CppNuevo);
             
