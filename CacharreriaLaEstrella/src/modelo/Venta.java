@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package modelo;
 
 /**
@@ -11,68 +12,81 @@ package modelo;
  */
 public class Venta {
 
-  
-    public Venta() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  /**
+  * venta
+  */
+  public Venta() {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        //To change body of generated methods, choose Tools | Templates.
         
-    }
-
-    public Venta(int codigoventa, int CantidadProducto, String Fecha, double totalventa, int codigoproducto) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        this.codigoventa = codigoventa;
-        this.CantidadProducto = CantidadProducto;
-        this.Fecha = Fecha;
-        this.totalventa = totalventa;
-        this.codigoproducto = codigoproducto;
-    }
+  }
+  /**
+ * 
+ * @param codigoventa identificacion de la venta
+ * @param cantidadProducto cantidad
+ * @param fecha fecha
+ * @param totalventa total de la venta
+ * @param codigoproducto  codigo del producto
+ */
+  
+  public Venta(int codigoventa, int cantidadProducto, String fecha, 
+            double totalventa, int codigoproducto) {
+    //throw new UnsupportedOperationException("Not supported yet."); 
+    //To change body of generated methods, choose Tools | Templates.
+    this.codigoventa = codigoventa;
+    this.cantidadProducto = cantidadProducto;
+    this.fecha = fecha;
+    this.totalventa = totalventa;
+    this.codigoproducto = codigoproducto;
+  }
 
     
 
-    public int getCodigoventa() {
-        return codigoventa;
-    }
+  public int getCodigoventa() {
+    return codigoventa;
+  }
 
-    public void setCodigoventa(int codigoventa) {
-        this.codigoventa = codigoventa;
-    }
+  public void setCodigoventa(int codigoventa) {
+    this.codigoventa = codigoventa;
+  }
 
-    public int getCantidadProducto() {
-        return CantidadProducto;
-    }
+  public int getCantidadProducto() {
+    return cantidadProducto;
+  }
 
-    public void setCantidadProducto(int CantidadProducto) {
-        this.CantidadProducto = CantidadProducto;
-    }
+  public void setCantidadProducto(int cantidadProducto) {
+    this.cantidadProducto = cantidadProducto;
+  }
 
-    public String getFecha() {
-        return Fecha;
-    }
+  public String getFecha() {
+    return fecha;
+  }
 
-    public void setFecha(String Fecha) {
-        this.Fecha = Fecha;
-    }
+  public void setFecha(String fecha) {
+    this.fecha = fecha;
+  }
 
-    public double getTotalventa() {
-        return totalventa;
-    }
+  public double getTotalventa() {
+    return totalventa;
+  }
 
-    public void setTotalventa(double totalventa) {
-        this.totalventa = totalventa;
-    }
+  public void setTotalventa(double totalventa) {
+    this.totalventa = totalventa;
+  }
 
-    public int getCodigoproducto() {
-        return codigoproducto;
-    }
+  public int getCodigoproducto() {
+    return codigoproducto;
+  }
 
-    public void setCodigoproducto(int codigoproducto) {
-        this.codigoproducto = codigoproducto;
-    }
+  public void setCodigoproducto(int codigoproducto) {
+    this.codigoproducto = codigoproducto;
+  }
 
-    private  int codigoventa;
-    private  int CantidadProducto;
-    private String Fecha;
-    private double totalventa;
-    private int codigoproducto;
+  private  int codigoventa;
+  private  int cantidadProducto;
+  private String fecha;
+  private double totalventa;
+  private int codigoproducto;
 
     
 
