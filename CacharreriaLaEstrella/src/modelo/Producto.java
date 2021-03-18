@@ -3,85 +3,96 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package modelo;
 
-/**
+/**. 
  *
- * @author dcorr
+ * @author dcorr en esta clase está la definición del objeto producto 
  */
 public class Producto {
-    
-    private  int Cantidad;
-    private  int id;
-    private  String nombre;
-    private String categoria;
-    private double PrecioVenta;
-    private double Cpp;
+  private  int cantidad;
+  private  int id;
+  private  String nombre;
+  private String categoria;
+  private double precioVenta;
+  private double cpp;
 
-    public Producto() {
+  public Producto() {
         
-    }
-
-    public Producto(int id, String nombre, String categoria, double PrecioVenta,int Cantidad,double Cpp) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+  
+  /**.
+   * 
+   * @param id es el numero para identificar el producto 
+   * @param nombre nombre del producto 
+   * @param categoria la categoria a la cual pertenece el producto (aseo, alimentos, medicina)
+   * @param precioVenta precio asignado al producto para la venta 
+   * @param cantidad cantidad disponible del producto 
+   * @param cpp ponderado 
+   */
+  public Producto(int id, String nombre, String categoria, 
+         double precioVenta,int cantidad,double cpp) {
+    //throw new UnsupportedOperationException("Not supported yet."); 
+    //To change body of generated methods, choose Tools | Templates.
         
-        this.Cantidad = Cantidad;
-        this.id = id;
-        this.nombre = nombre;
-        this.categoria = categoria;
-        this.PrecioVenta = PrecioVenta;
-        this.Cpp= Cpp;
-    }
+    this.cantidad = cantidad;
+    this.id = id;
+    this.nombre = nombre;
+    this.categoria = categoria;
+    this.precioVenta = precioVenta;
+    this.cpp = cpp;
+  }
 
-    public double getCpp() {
-        return Cpp;
-    }
+  public double getCpp() {
+    return cpp;
+  }
 
-    public void setCpp(double Cpp) {
-        this.Cpp = Cpp;
-    }
+  public void setCpp(double cpp) {
+    this.cpp = cpp;
+  }
     
     
   
-    public int getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getNombre() {
-        return nombre;
-    }
+  public String getNombre() {
+    return nombre;
+  }
 
-    public String getCategoria() {
-        return categoria;
-    }
+  public String getCategoria() {
+    return categoria;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+  public void setCategoria(String categoria) {
+    this.categoria = categoria;
+  }
     
-     public double getPrecioVenta() {
-        return PrecioVenta;
-    }
+  public double getPrecioVenta() {
+    return precioVenta;
+  }
 
-    public int getCantidad() {
-        return Cantidad;
-    }
+  public int getCantidad() {
+    return cantidad;
+  }
     
-     public void setPrecioVenta(double PrecioVenta) {
-        this.PrecioVenta = PrecioVenta;
-    }
+  public void setPrecioVenta(double precioVenta) {
+    this.precioVenta = precioVenta;
+  }
 
-    public void setCantidad(int Cantidad) {
-        this.Cantidad = Cantidad;
-    }
+  public void setCantidad(int cantidad) {
+    this.cantidad = cantidad;
+  }
     
     
 
