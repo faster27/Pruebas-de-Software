@@ -12,46 +12,53 @@ package modelo;
 public class Fiado {
   private int cedula;
   private String nombrecliente;
-    private double Cantidadfiada;
-    private double abono;
+  private double cantidadfiada;
+  private double abono;
 
-    public Fiado() {
-    }
+  public Fiado() {
+  }
+  /**
+ * 
+ * @param cedula identisicacion
+ * @param nombrecliente nombre de la persona
+ * @param Cantidadfiada cantidad que se fio
+ * @param abono lo que ha pagado
+ */
+  
+  public Fiado(int cedula, String nombrecliente, double Cantidadfiada, double abono) {
+    this.cedula = cedula;
+    this.nombrecliente = nombrecliente;
+    this.cantidadfiada = Cantidadfiada;
+    this.abono = abono;
+  }
 
-    public Fiado(int cedula, String nombrecliente, double Cantidadfiada, double abono) {
-        this.cedula = cedula;
-        this.nombrecliente = nombrecliente;
-        this.Cantidadfiada = Cantidadfiada;
-        this.abono = abono;
-    }
+  public int getCedula() {
+    return cedula;
+  }
 
-    public int getCedula() {
-        return cedula;
-    }
+  public void setCedula(int cedula) {
+    this.cedula = cedula;
+  }
 
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }
+  public String getNombrecliente() {
+    return nombrecliente;
+  }
 
-    public String getNombrecliente() {
-        return nombrecliente;
-    }
+  public void setNombrecliente(String nombrecliente) {
+    this.nombrecliente = nombrecliente;
+  }
 
-    public void setNombrecliente(String nombrecliente) {
-        this.nombrecliente = nombrecliente;
-    }
+  public double getCantidadfiada() {
+    return cantidadfiada;
+  }
 
-    public double getCantidadfiada() {
-        return Cantidadfiada;
-    }
+  public void setCantidadfiada(double cantidadfiada) {
+    this.cantidadfiada = cantidadfiada;
+  }
 
-    public void setCantidadfiada(double Cantidadfiada) {
-        this.Cantidadfiada = Cantidadfiada;
-    }
-
-    public double getAbono() {
-        return abono;
-    }
+  public double getAbono() {
+    return abono;
+  }
 
     public void setAbono(double abono) {
         this.abono = abono;
