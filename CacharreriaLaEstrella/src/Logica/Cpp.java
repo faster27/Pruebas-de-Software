@@ -16,31 +16,31 @@ package Logica;
 public class Cpp {
   /**
    * 
-   * @param CantidadEnStock Cantidad de un producto que se tiene en bodega
-   * @param CppActual Nos dice cual es el valor cpp actual del producto
-   * @param UnidadesNuevas cuantas unidades se compraron en el nuevo ingreso
-   * @param CostoCompraUnidad valor unitario del producto
+   * @param cantidadEnStock Cantidad de un producto que se tiene en bodega
+   * @param cppActual Nos dice cual es el valor cpp actual del producto
+   * @param unidadesNuevas cuantas unidades se compraron en el nuevo ingreso
+   * @param costoCompraUnidad valor unitario del producto
    * @return .
    */
     
-  public static double ActualizarCpp(int CantidadEnStock, double CppActual, 
-          int UnidadesNuevas, double CostoCompraUnidad){
+  public static double actualizarCpp(int cantidadEnStock, double cppActual, 
+          int unidadesNuevas, double costoCompraUnidad) {
     
         
-    System.out.println(CantidadEnStock);
-    System.out.println(CppActual);
-    System.out.println(UnidadesNuevas);
-    System.out.println(CostoCompraUnidad);
+    System.out.println(cantidadEnStock);
+    System.out.println(cppActual);
+    System.out.println(unidadesNuevas);
+    System.out.println(costoCompraUnidad);
         
 
     //calcular el cpp
-    double cpp_new;
+    double cppNew;
     
-    cpp_new = (CantidadEnStock * CppActual + UnidadesNuevas * CostoCompraUnidad)
-            / (CantidadEnStock + UnidadesNuevas);
+    cppNew = (cantidadEnStock * cppActual + unidadesNuevas * costoCompraUnidad)
+            / (cantidadEnStock + unidadesNuevas);
         
     //System.out.println(cpp_new);
-    return cpp_new;   
+    return cppNew;   
   }
     
     

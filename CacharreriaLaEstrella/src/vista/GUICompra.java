@@ -356,7 +356,7 @@ public class GUICompra extends javax.swing.JFrame {
           
             
             double CppNuevo;
-            CppNuevo = Cpp.ActualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
+            CppNuevo = Cpp.actualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
             DAOProducto.conexion();
             DAOProducto.ActualizarCpp(nuevaCompra.getCodigoProducto(), CppNuevo);
             
