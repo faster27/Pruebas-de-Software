@@ -7,15 +7,13 @@ package modelo;
 
 /**
  *
- * @author dcorr esto es una prueba ....
- * prueba
+ * @author dcorr esto es una prueba .... prueba
  */
 public class Fiado {
-    
-    private  int cedula;
-    private  String nombrecliente;
-    private  double Cantidadfiada;
-    private  double abono;
+  private int cedula;
+  private String nombrecliente;
+    private double Cantidadfiada;
+    private double abono;
 
     public Fiado() {
     }
@@ -58,7 +56,5 @@ public class Fiado {
     public void setAbono(double abono) {
         this.abono = abono;
     }
-    
-    
-    
+
 }
