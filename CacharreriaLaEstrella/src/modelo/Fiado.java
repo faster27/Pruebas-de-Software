@@ -7,7 +7,7 @@ package modelo;
 
 /**
  *
- * @author dcorr
+ * @author dcorr esto es una prueba
  */
 public class Fiado {
     
