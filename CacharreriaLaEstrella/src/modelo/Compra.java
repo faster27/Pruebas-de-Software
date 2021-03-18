@@ -22,6 +22,7 @@ public class Compra {
         
   }
   
+  
   /**.
    * 
    * @param codigoCompra Codigo para identificar la compra en l base de datos
