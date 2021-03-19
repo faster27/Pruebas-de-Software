@@ -7,13 +7,14 @@
 package vista;
 
 import Logica.Cpp;
+import modelo.Compra;
+import persistencia.DaoCompra;
+import persistencia.DaoProducto;
+
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import modelo.Compra;
-import persistencia.DaoCompra;
-import persistencia.DaoProducto;
 
 /**.
  *
