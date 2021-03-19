@@ -18,7 +18,7 @@ import modelo.Compra;
 
 import vista.GUIProductos;
 import modelo.Producto;
-import static persistencia.DAOCompra.resultado;
+import static persistencia.DaoCompra.resultado;
 
 /**
  *

@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Compra;
-import persistencia.DAOCompra;
+import persistencia.DaoCompra;
 import persistencia.DAOProducto;
 
 /**
@@ -324,8 +324,8 @@ public class GUICompra extends javax.swing.JFrame {
             nuevaCompra.setFecha((String) jTableTablaCompras1.getValueAt(0, 4));
             nuevaCompra.setCodigoProducto(Integer.parseInt((String) jTableTablaCompras1.getValueAt(0, 6)));
             
-            DAOCompra.conexion();
-            DAOCompra.GuardarCompra(nuevaCompra);
+            DaoCompra.conexion();
+            DaoCompra.guardarCompra(nuevaCompra);
         
         
         int filas=jTableTablaCompras1.getRowCount();
@@ -344,9 +344,9 @@ public class GUICompra extends javax.swing.JFrame {
             String FechaAviso= (String) jTableTablaCompras1.getValueAt(i, 8);
             double TotalVenta=(double) jTableTablaCompras1.getValueAt(i, 5);
             
-            DAOCompra.conexion();
+            DaoCompra.conexion();
            
-            DAOCompra.GuardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso,TotalVenta);
+            DaoCompra.guardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso,TotalVenta);
             DAOProducto.conexion();
             int CppActual= DAOProducto.consultarCpp(nuevaCompra.getCodigoProducto());
             int CantidadStockActual=DAOProducto.consultarCantidad(nuevaCompra.getCodigoProducto());

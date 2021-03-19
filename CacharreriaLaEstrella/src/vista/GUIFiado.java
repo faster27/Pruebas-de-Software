@@ -7,8 +7,8 @@ package vista;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import modelo.fiado;
-import persistencia.Daofiado;
+import modelo.Fiado;
+import persistencia.DaoFiado;
 
 /**
  *
@@ -170,7 +170,7 @@ public class GUIFiado extends javax.swing.JFrame {
         
         }else {
         
-         fiado nuevoFiado= new fiado();
+         Fiado nuevoFiado= new Fiado();
             
             nuevoFiado.setCedula(Integer.parseInt(jTextField1cedula.getText()));
             nuevoFiado.setNombrecliente(jTextField2nombrecliente.getText());
@@ -178,8 +178,8 @@ public class GUIFiado extends javax.swing.JFrame {
             nuevoFiado.setAbono(0.0);
            
             
-            Daofiado.conexion();
-            Daofiado.guardarFiado(nuevoFiado);
+            DaoFiado.conexion();
+            DaoFiado.guardarFiado(nuevoFiado);
         }
         
     }//GEN-LAST:event_jButton3RegistrarFiadoActionPerformed
@@ -197,14 +197,14 @@ public class GUIFiado extends javax.swing.JFrame {
              int cedula1 = Integer.parseInt(cedula);
              double abono1=Double.parseDouble(abono);
              
-             double abono2= Daofiado.consultarAbono(cedula1);
-             double Fiado=Daofiado.consultarFiado(cedula1);
+             double abono2= DaoFiado.consultarAbono(cedula1);
+             double Fiado=DaoFiado.consultarFiado(cedula1);
              
              double Deuda = Fiado-abono2;
              
              if (abono1 <= Deuda ){
-                Daofiado.conexion();
-                Daofiado.actualizarabono(abono1, cedula1);
+                DaoFiado.conexion();
+                DaoFiado.actualizarAbono(abono1, cedula1);
              
              }else {
                  JOptionPane.showMessageDialog(this, "el valor a abonar es  mayor que el valor deuda");
@@ -233,8 +233,8 @@ public class GUIFiado extends javax.swing.JFrame {
             
              int cedula1 = Integer.parseInt(cedula);
              double Fiadonuevo1=Double.parseDouble(Fiadonuevo);
-              Daofiado.conexion();
-              Daofiado.actualizarfiado(Fiadonuevo1, cedula1);
+              DaoFiado.conexion();
+              DaoFiado.actualizarFiado(Fiadonuevo1, cedula1);
         
         }
         catch (NumberFormatException e) {
@@ -291,14 +291,14 @@ public class GUIFiado extends javax.swing.JFrame {
         String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual consultara");
         
         
-        fiado cliente = new fiado();
+        Fiado cliente = new Fiado();
          
         try {
             
             int cedula1 = Integer.parseInt(cedula);
              
-            Daofiado.conexion();
-            cliente = Daofiado.consultarCliente(cedula1);
+            DaoFiado.conexion();
+            cliente = DaoFiado.consultarCliente(cedula1);
              
             DefaultTableModel modelo= (DefaultTableModel) jTable1Fiados.getModel();
             

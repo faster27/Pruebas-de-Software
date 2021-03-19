@@ -6,13 +6,13 @@
 
 package modelo;
 
-/**
+/**.
  *
  * @author dcorr
  */
 public class Venta {
 
-  /**
+  /**.
   * venta
   */
   public Venta() {
@@ -20,13 +20,13 @@ public class Venta {
         //To change body of generated methods, choose Tools | Templates.
         
   }
-  /**
+  /**.
  * 
  * @param codigoventa identificacion de la venta
- * @param cantidadProducto cantidad
- * @param fecha fecha
- * @param totalventa total de la venta
- * @param codigoproducto  codigo del producto
+ * @param cantidadProducto cantidad de productos vendidos 
+ * @param fecha fecha en la que se realizo la venta 
+ * @param totalventa total de la venta realizada 
+ * @param codigoproducto  codigo del producto que se vendió 
  */
   
   public Venta(int codigoventa, int cantidadProducto, String fecha, 
