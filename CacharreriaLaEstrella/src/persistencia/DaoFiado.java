@@ -159,13 +159,8 @@ public class DaoFiado {
                         
       resultado = sentencia.executeQuery(sql);
                         
-      resultado.next();
-                       
-
-      abono = resultado.getInt(1);
-                        
-                        
-
+      resultado.next();                      
+      abono = resultado.getInt(1);                        
     } catch (SQLException e) {			
       e.printStackTrace();
                        
@@ -176,75 +171,79 @@ public class DaoFiado {
     return abono;
         
         
-    }
-    
-    public static int consultarFiado(int cedula) {
-        int fiado = 0;
-       // System.out.println(codigoProducto);
-        
-        String Sql = "select valorfiado from ventasfiadas where (cedula="+cedula+")";
-        
-        try {
-                        
-			resultado = sentencia.executeQuery(Sql);
-                        
-                        if (resultado.next()){
-                        
-			resultado.next();
-                       
-
-			fiado = resultado.getInt(1);
-                        
-                        }
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-                       
-			System.out.println("El cliente no tiene un fiado que actualizar");
-		}
-        
-        
-        return fiado;
-        
-        
-    }
-    
-    public static Fiado consultarCliente(int cedula) {
-        int abono = 0;
-       // System.out.println(codigoProducto);
+  }
+  
+  /**.
+   * 
+   * @param cedula identificar la persona 
+   * @return retorna la info
+   */  
+  public static int consultarFiado(int cedula) {
+    int fiado = 0;
        
-        Fiado cliente= new Fiado();
         
-        String Sql = "select * from ventasfiadas where (cedula="+cedula+")";
+    String sql;
+    sql = "select valorfiado from ventasfiadas where (cedula=" + cedula + ")";
         
-        try {
+    try {
                         
-			resultado = sentencia.executeQuery(Sql);
+      resultado = sentencia.executeQuery(sql);
                         
-                        if(resultado.next()){
-			resultado.next();
-                       
-                        cliente.setCedula(resultado.getInt(1));
-                        cliente.setNombrecliente(resultado.getString(2));
-                        cliente.setCantidadfiada(resultado.getDouble(3));
-                        cliente.setAbono(resultado.getDouble(4));
-                        }
+      if (resultado.next()) {
+                        
+        resultado.next();
+        fiado = resultado.getInt(1);
+                        
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println("El cliente no tiene un fiado que actualizar");
+    }
+        
+        
+    return fiado;
+        
+        
+  }
+  
+  /**.
+   * 
+   * @param cedula Identificar que cliente se quiere consultar en la BD
+   * @return retorna el objeto con la info del cliente
+   */
+  public static Fiado consultarCliente(int cedula) {
+    int abono = 0;
+       
+    Fiado cliente = new Fiado();
+        
+    String sql;
+    sql = "select * from ventasfiadas where (cedula=" + cedula + ")";
+        
+    try {
+                        
+      resultado = sentencia.executeQuery(sql);
+                        
+      if (resultado.next()) {
+	resultado.next();           
+        cliente.setCedula(resultado.getInt(1));
+        cliente.setNombrecliente(resultado.getString(2));
+        cliente.setCantidadfiada(resultado.getDouble(3));
+        cliente.setAbono(resultado.getDouble(4));
+      }
                         
                         
 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-                       
-			System.out.println(e);
-		}
-        
-        
-        return cliente;
-        
-        
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(e);
     }
+        
+        
+    return cliente;
+        
+        
+  }
     
     
     
