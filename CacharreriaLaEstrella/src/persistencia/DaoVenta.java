@@ -6,6 +6,8 @@
 
 package persistencia;
 
+import modelo.Venta;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,14 +15,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-
-import vista.GuiCompra;
-import modelo.Compra;
-import modelo.Producto;
-import modelo.Venta;
-import static persistencia.DaoProducto.cadenaDriver;
-import static persistencia.DaoProducto.conexion;
-
 
 /**.
  *
