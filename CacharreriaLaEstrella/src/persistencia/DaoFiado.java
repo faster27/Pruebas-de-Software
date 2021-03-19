@@ -49,6 +49,7 @@ public class DaoFiado {
 
   } 
     
+  
   /**.
    * 
    * @param fiado me contiene el objeto fado con la informacion del mismo para guardarla en la BD
