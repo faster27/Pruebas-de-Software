@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import persistencia.DAOProducto;
+import persistencia.DaoProducto;
 
 /**
  *
@@ -120,8 +120,8 @@ public class GUIProductosVencimiento extends javax.swing.JFrame {
         ArrayList<ArrayList> ProductosVencerse = new ArrayList<>();
         ArrayList<String> ProductosVencerse2 = new ArrayList<>();
         
-        DAOProducto.conexion();
-        ProductosVencerse= DAOProducto.consultarProductosVencimiento(jTextField1FechaAviso.getText());
+        DaoProducto.conexion();
+        ProductosVencerse= DaoProducto.consultarProductosVencimiento(jTextField1FechaAviso.getText());
         
          
         

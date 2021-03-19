@@ -10,7 +10,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
 
-import persistencia.DAOProducto;
+import persistencia.DaoProducto;
 
 
 /**
@@ -232,8 +232,8 @@ public class GUIProductos extends javax.swing.JFrame {
             nuevoProducto.setCantidad(0);
             nuevoProducto.setCpp((double) jTableTablaProductos1.getValueAt(i, 4));
             
-            DAOProducto.conexion();
-            DAOProducto.GuardarProducto(nuevoProducto);
+            DaoProducto.conexion();
+            DaoProducto.guardarProducto(nuevoProducto);
             
         
         }
