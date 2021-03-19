@@ -188,40 +188,29 @@ public class GuiFiado extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual abonar");
-        String abono=JOptionPane.showInputDialog("Ingrese el valor a abonar");
+      String cedula=JOptionPane.showInputDialog("Ingrese la cedula del cliente al cual abonar");
+      String abono=JOptionPane.showInputDialog("Ingrese el valor a abonar");
         
- 
-       
-        try {
+      try {
             
-             int cedula1 = Integer.parseInt(cedula);
-             double abono1=Double.parseDouble(abono);
+        int cedula1 = Integer.parseInt(cedula);
+        double abono1=Double.parseDouble(abono);
+        double abono2= DaoFiado.consultarAbono(cedula1);
+        double Fiado=DaoFiado.consultarFiado(cedula1);
+        double Deuda = Fiado-abono2;
              
-             double abono2= DaoFiado.consultarAbono(cedula1);
-             double Fiado=DaoFiado.consultarFiado(cedula1);
+        if (abono1 <= Deuda ){
+          DaoFiado.conexion();
+          DaoFiado.actualizarAbono(abono1, cedula1);
              
-             double Deuda = Fiado-abono2;
-             
-             if (abono1 <= Deuda ){
-                DaoFiado.conexion();
-                DaoFiado.actualizarAbono(abono1, cedula1);
-             
-             }else {
-                 JOptionPane.showMessageDialog(this, "el valor a abonar es  mayor que el valor deuda");
-             }
-             
-              
+        }else {
+          JOptionPane.showMessageDialog(this, "el valor a abonar es  mayor que el valor deuda");
+        }         
         
-        }
-        catch (NumberFormatException e) {
+     } catch (NumberFormatException e) {
           
-            JOptionPane.showMessageDialog(this, "Los datos ingresados son erroneos o los campos estan vacios");
-        }
-        
-        
-       
-        
+         JOptionPane.showMessageDialog(this, "Los datos ingresados son erroneos o los campos estan vacios");
+     }     
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActualizarFiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActualizarFiadoActionPerformed
