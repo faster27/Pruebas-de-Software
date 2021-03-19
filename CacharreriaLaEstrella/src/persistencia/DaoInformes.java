@@ -173,7 +173,7 @@ public class DaoInformes {
 
   }
 
-    public static ArrayList ConsultarInformeCompra(String fecha1, String fecha2) {
+  public static ArrayList ConsultarInformeCompra(String fecha1, String fecha2) {
 
         String text;
 
