@@ -167,7 +167,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
     private void jButton1RegistrarfiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1RegistrarfiadoActionPerformed
         // TODO add your handling code here:
-        GUIFiado VentanaFiado = new GUIFiado();
+        GuiFiado VentanaFiado = new GuiFiado();
         VentanaFiado.setVisible(true);
     }//GEN-LAST:event_jButton1RegistrarfiadoActionPerformed
 
