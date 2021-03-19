@@ -66,11 +66,11 @@ public class DaoVenta {
           + "fecha)"
           + "  VALUES (?,?)";
 
-      PreparedStatement ps = conexion.prepareStatement(consultaSql);
-      ps.setLong(1, venta.getCodigoventa());
-      ps.setString(2, venta.getFecha());
-      ps.executeQuery();
-      ps.close();
+        try (PreparedStatement ps = conexion.prepareStatement(consultaSql)) {
+            ps.setLong(1, venta.getCodigoventa());
+            ps.setString(2, venta.getFecha());
+            ps.executeQuery();
+        }
 
     } catch (SQLException e) {
 
@@ -94,14 +94,14 @@ public class DaoVenta {
               + "cantidad,totalventaproducto,cppcostos)"
               + " VALUES (?,?,?,?,?)";
 
-      PreparedStatement ps = conexion.prepareStatement(consultaSql);
-      ps.setLong(1, nuevaVenta.getCodigoventa());
-      ps.setLong(2, nuevaVenta.getCodigoproducto());
-      ps.setLong(3, nuevaVenta.getCantidadProducto());
-      ps.setDouble(4, nuevaVenta.getTotalventa());
-      ps.setDouble(5, costoCpp);
-      ps.executeQuery();
-      ps.close();
+        try (PreparedStatement ps = conexion.prepareStatement(consultaSql)) {
+            ps.setLong(1, nuevaVenta.getCodigoventa());
+            ps.setLong(2, nuevaVenta.getCodigoproducto());
+            ps.setLong(3, nuevaVenta.getCantidadProducto());
+            ps.setDouble(4, nuevaVenta.getTotalventa());
+            ps.setDouble(5, costoCpp);
+            ps.executeQuery();
+        }
 
     } catch (SQLException e) {
 
