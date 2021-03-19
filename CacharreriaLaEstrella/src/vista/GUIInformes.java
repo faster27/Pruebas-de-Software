@@ -425,7 +425,7 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<Integer> Compra = new ArrayList<>();
         
         DaoInformes.conexion();
-        ResultadoCompra=DaoInformes.ConsultarInformeCompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
+        ResultadoCompra=DaoInformes.consultarinformecompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
         
       
         

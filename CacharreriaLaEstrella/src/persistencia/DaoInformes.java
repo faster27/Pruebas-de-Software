@@ -172,52 +172,67 @@ public class DaoInformes {
     return resultadoArray;
 
   }
+  
+  /**.
+   * 
+   * @param fecha1 fecha desde donde se va a consultar
+   * @param fecha2 fecha hasta la cual se consulta
+   * @return  retorna toda la info regresada por la consulta
+   */
+  public static ArrayList consultarinformecompra(String fecha1, String fecha2) {
 
-  public static ArrayList ConsultarInformeCompra(String fecha1, String fecha2) {
+    String text;
 
-        String text;
+    ArrayList<Integer> compra = new ArrayList<>();
+    ArrayList<String> categoria = new ArrayList<>();
+    ArrayList<Object> resultadoArray = new ArrayList<>();
 
-        ArrayList<Integer> compra = new ArrayList<>();
-        ArrayList<String> Categoria = new ArrayList<>();
-        ArrayList<Object> Resultado = new ArrayList<>();
+    try {
 
-        try {
+      // ARMA LA SENTENCIA DE INSERCCION
+      String consultanumerofilas;
+      consultanumerofilas = "SELECT Count(*) FROM productos "
+                + "INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto "
+                + "INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa "
+                + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
+      String consultaSql = "SELECT productos.nombreproducto, SUM(compraproducto.totalcompra) "
+              + "as TotalCategoria FROM productos INNER JOIN compraproducto "
+              + "ON productos.codigo = compraproducto.codigoproducto "
+              + "INNER JOIN compra on compraproducto.codigocompra = compra.codigocompra "
+              + "where compra.fecha between'" + fecha1 + "'and'" + fecha2 + "'"
+              + "group by productos.nombreproducto";
 
-            // ARMA LA SENTENCIA DE INSERCCION
-            String Consultanumerofilas = "SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
-            String consultaSQL = "SELECT productos.nombreproducto, SUM(compraproducto.totalcompra) as TotalCategoria FROM productos INNER JOIN compraproducto ON productos.codigo = compraproducto.codigoproducto INNER JOIN compra on compraproducto.codigocompra = compra.codigocompra where compra.fecha between'" + fecha1 + "'and'" + fecha2 + "'group by productos.nombreproducto";
+      resultado = sentencia.executeQuery(consultaSql);
+      resultado2 = sentencia.executeQuery(consultanumerofilas);
+      resultado2.next();
 
-            resultado = sentencia.executeQuery(consultaSQL);
-            resultado2 = sentencia.executeQuery(Consultanumerofilas);
-            resultado2.next();
+      int i;
 
-            int i;
+      for (i = 0; i < resultado2.getInt(1); i++) {
 
-            for (i = 0; i < resultado2.getInt(1); i++) {
+        if (resultado.next()) {
 
-                if (resultado.next()) {
-
-                    Categoria.add(resultado.getString(1));
-                    compra.add(resultado.getInt(2));
-                    resultado.next();
-                } else {
-                }
-
-            }
-
-            Resultado.add(Categoria);
-            Resultado.add(compra);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e);
-
-            JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
-
+          categoria.add(resultado.getString(1));
+          compra.add(resultado.getInt(2));
+          resultado.next();
+        } else {
         }
-        return Resultado;
+
+      }
+
+      resultadoArray.add(categoria);
+      resultadoArray.add(compra);
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(e);
+
+      JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
 
     }
+    return resultadoArray;
+
+  }
 
     public static ArrayList ConsultarInformeMasVendidos(String fecha1, String fecha2) {
 
@@ -298,7 +313,7 @@ public class DaoInformes {
             ResultadoTotal.add(NombreProductos);
             ResultadoTotal.add(CantidadProducto);
 
-        } catch (SQLException e) {
+        } catch (SQLException e) { 
             e.printStackTrace();
             System.out.println(e);
 
