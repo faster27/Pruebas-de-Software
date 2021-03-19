@@ -35,78 +35,84 @@ public class DaoInformes {
    */ 
   public static void conexion() {
 
-		String clave = "1234";
-		String url = "jdbc:postgresql://localhost:5432/CacharreriaLaEstrella";
-		String usuario = "postgres";
+    String clave = "1234";
+    String url = "jdbc:postgresql://localhost:5432/CacharreriaLaEstrella";
+    String usuario = "postgres";
 
-		try {
+    try {
 
-			Class.forName(cadenaDriver);
-			conexion = DriverManager.getConnection(url, usuario, clave);
-			sentencia = conexion.createStatement();
+      Class.forName(cadenaDriver);
+      conexion = DriverManager.getConnection(url, usuario, clave);
+      sentencia = conexion.createStatement();
+    } catch (ClassNotFoundException | SQLException e) {			
+      JOptionPane.showMessageDialog(null, "error al conectar" + e);
 
-			
-
-		} catch (Exception e) {
-			//TODO: HANDLE EXCEPTION
-			JOptionPane.showMessageDialog(null, "error al conectar" + e);
-
-		}
-
-	}
-    
-     public static ArrayList ConsultarInformeCategorias(String fecha1, String fecha2) {
+    }
+  }
+   
+  /**.
+   * 
+   * @param fecha1 Fecha desde donde comienzo la consulta
+   * @param fecha2 Fecha final de la consulta
+   * @return retorna la info 
+   */
+  public static ArrayList consultarInformeCategorias(String fecha1, String fecha2) {
          
-         String text;
+    String text;
          
-          ArrayList<Integer> ventas = new ArrayList<>();
-          ArrayList<String> Categoria = new ArrayList<>();
-          ArrayList<Object> Resultado = new ArrayList<>();
+    ArrayList<Integer> ventas = new ArrayList<>();
+    ArrayList<String> categoria = new ArrayList<>();
+    ArrayList<Object> Resultado = new ArrayList<>();
 
-		try {
+    try {
 
-			// ARMA LA SENTENCIA DE INSERCCION
-                        String Consultanumerofilas="SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'";
-			String consultaSQL = "SELECT productos.categoria, SUM(ventaproducto.totalventaproducto) as TotalCategoria FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'"+fecha1+"'and'"+fecha2+"'group by productos.categoria";
-					
-                        
-			resultado = sentencia.executeQuery(consultaSQL);
-                        resultado2 = sentencia.executeQuery(Consultanumerofilas);
-                        resultado2.next();
-                          int i;
-                        		                       
-                        for (i=0; i<resultado2.getInt(1);i++){
+      // ARMA LA SENTENCIA DE INSERCCION
+      String consultanumerofilas;
+      consultanumerofilas = "SELECT Count(*) FROM productos "
+                + "INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto "
+                + "INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa "
+                + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
+      String consultaSql = "SELECT productos.categoria, SUM(ventaproducto.totalventaproducto) "
+              + "as TotalCategoria "
+              + "FROM productos INNER JOIN "
+              + "ventaproducto ON productos.codigo = ventaproducto.codigoproducto "
+              + "INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa "
+              + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'"
+              + "group by productos.categoria";
+					                       
+      resultado = sentencia.executeQuery(consultaSql);
+      resultado2 = sentencia.executeQuery(consultanumerofilas);
+      resultado2.next();
+      int i;                      		                       
+      for (i = 0; i < resultado2.getInt(1);i++) {
                             
-                            if(resultado.next()){
+        if (resultado.next()) {
                                
 
-                                Categoria.add(resultado.getString(1));
-                                ventas.add(resultado.getInt(2));
-                                 resultado.next();
-                            }else{
+          categoria.add(resultado.getString(1));
+          ventas.add(resultado.getInt(2));
+          resultado.next();
+        } else{
                             
-                            }
+        }
                             
                             
-                        }
+      }
                         
-                        Resultado.add(Categoria);
-                        Resultado.add(ventas);
+      Resultado.add(categoria);
+      Resultado.add(ventas);
                    
                         
-		} catch (SQLException e) {
-                        e.printStackTrace();
-			System.out.println(e);
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(e);
 
-			JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
+      JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
 
-		}
-         return Resultado;  
+    }
+    return Resultado;  
                
-               
-
-
-	}
+  }
      
      
     public static ArrayList ConsultarInformeCostos(String fecha1, String fecha2) {
