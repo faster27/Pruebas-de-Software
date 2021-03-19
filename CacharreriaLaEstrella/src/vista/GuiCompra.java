@@ -382,7 +382,7 @@ public class GuiCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1codigoproductoKeyTyped
 
     private void jTextField1CodigoCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1CodigoCompraKeyTyped
-        // TODO add your handling code here:
+       // TODO add your handling code here:
         
          char caracter = evt.getKeyChar();
 
@@ -396,12 +396,12 @@ public class GuiCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1CodigoCompraKeyTyped
 
     private void jTextField2PrecioDeCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2PrecioDeCompraKeyTyped
-        // TODO add your handling code here:
+      // TODO add your handling code here:
         
-         char caracter = evt.getKeyChar();
+      char caracter = evt.getKeyChar();
 
       // Verificar si la tecla pulsada  es un digito
-     // Verificar si la tecla pulsada no es un digito
+      // Verificar si la tecla pulsada no es un digito
       if(Character.isDigit(caracter))
       {
           
@@ -418,27 +418,27 @@ public class GuiCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3CantidadActionPerformed
 
     private void jTextField3CantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3CantidadKeyTyped
-        // TODO add your handling code here:
-         char caracter = evt.getKeyChar();
+      // TODO add your handling code here:
+      char caracter = evt.getKeyChar();
 
       // Verificar si la tecla pulsada  es un digito
-     // Verificar si la tecla pulsada no es un digito
+      // Verificar si la tecla pulsada no es un digito
       if(Character.isDigit(caracter))
       {
           
       }else{
-          getToolkit().beep();
-          evt.consume();  // ignorar el evento de teclado
+        getToolkit().beep();
+        evt.consume();  // ignorar el evento de teclado
       }
     }//GEN-LAST:event_jTextField3CantidadKeyTyped
 
     private void jTextField1FechaVencimientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1FechaVencimientoKeyTyped
-        // TODO add your handling code here:
+      // TODO add your handling code here:
         
-         char caracter = evt.getKeyChar();
+      char caracter = evt.getKeyChar();
 
       // Verificar si la tecla pulsada  es un digito
-     // Verificar si la tecla pulsada no es un digito
+      // Verificar si la tecla pulsada no es un digito
       if(Character.isDigit(caracter) || caracter=='/')
       {
           
