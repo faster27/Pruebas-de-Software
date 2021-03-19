@@ -134,38 +134,44 @@ public class DaoInformes {
                 + "INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto "
                 + "INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa "
                 + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
-      String consultaSql = "SELECT productos.categoria, SUM(ventaproducto.cppcostos) as TotalCategoria FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'group by productos.categoria";
+      String consultaSql;
+      consultaSql = "SELECT productos.categoria, SUM(ventaproducto.cppcostos) as TotalCategoria "
+              + "FROM productos INNER JOIN ventaproducto "
+              + "ON productos.codigo = ventaproducto.codigoproducto "
+              + "INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa "
+              + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'"
+              + "group by productos.categoria";
 
       resultado = sentencia.executeQuery(consultaSql);
       resultado2 = sentencia.executeQuery(consultanumerofilas);
       resultado2.next();
-            int i;
+      int i;
 
-            for (i = 0; i < resultado2.getInt(1); i++) {
+      for (i = 0; i < resultado2.getInt(1); i++) {
 
-                if (resultado.next()) {
+        if (resultado.next()) {
 
-                    categoria.add(resultado.getString(1));
-                    ventas.add(resultado.getInt(2));
-                    resultado.next();
-                } else {
-                }
-
-            }
-
-            resultadoArray.add(categoria);
-            resultadoArray.add(ventas);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e);
-
-            JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
-
+          categoria.add(resultado.getString(1));
+          ventas.add(resultado.getInt(2));
+          resultado.next();
+        } else {
         }
-        return resultadoArray;
+
+      }
+
+      resultadoArray.add(categoria);
+      resultadoArray.add(ventas);
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(e);
+
+      JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
 
     }
+    return resultadoArray;
+
+  }
 
     public static ArrayList ConsultarInformeCompra(String fecha1, String fecha2) {
 
