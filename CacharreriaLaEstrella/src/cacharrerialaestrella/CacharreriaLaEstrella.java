@@ -6,7 +6,7 @@
 
 package cacharrerialaestrella;
 
-import vista.GUIPrincipal;
+import vista.GuiPrincipal;
 
 /**.
  *
@@ -18,7 +18,7 @@ public class CacharreriaLaEstrella {
    * @param args the command line arguments
     */
   public static void main(String[] args) {
-    GUIPrincipal principal = new GUIPrincipal();
+    GuiPrincipal principal = new GuiPrincipal();
     principal.setVisible(true);
   }
 }
