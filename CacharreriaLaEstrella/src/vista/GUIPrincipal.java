@@ -155,7 +155,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private void jButton1InformesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1InformesActionPerformed
         // TODO add your handling code here:
         
-        GUIInformes VentanaInformes = new GUIInformes();
+        GuiInformes VentanaInformes = new GuiInformes();
         VentanaInformes.setVisible(true);
         
        //SELECT productos.categoria, SUM(venta.totalventa) as TotalCategoria
