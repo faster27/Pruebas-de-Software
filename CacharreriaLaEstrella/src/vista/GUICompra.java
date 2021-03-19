@@ -15,7 +15,7 @@ import modelo.Compra;
 import persistencia.DaoCompra;
 import persistencia.DaoProducto;
 
-/**
+/**.
  *
  * @author dcorr
  */
