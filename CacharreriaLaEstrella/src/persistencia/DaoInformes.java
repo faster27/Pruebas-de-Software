@@ -251,43 +251,50 @@ public class DaoInformes {
     try {
 
       // ARMA LA SENTENCIA DE INSERCCION
-      String Consultanumerofilas = "SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
-      String consultaSQL = "SELECT productos.nombreproducto, SUM(ventaproducto.cantidad) as TotalCategoria "
-                    + "FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN "
-                    + "venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha "
-                    + "between'" + fecha1 + "' and '" + fecha2 + "' group by productos.nombreproducto order by TotalCategoria desc";
+      String consultanumerofilas;
+      consultanumerofilas = "SELECT Count(*) FROM productos "
+                + "INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto "
+                + "INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa "
+                + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
+      String consultaSql;
+      consultaSql = "SELECT productos.nombreproducto, SUM(ventaproducto.cantidad) as TotalCategoria"
+                + "FROM productos INNER JOIN "
+                + "ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN "
+                + "venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha "
+                + "between'" + fecha1 + "' and '" + fecha2 + "' group by productos.nombreproducto "
+                + "order by TotalCategoria desc";
 
-            resultado = sentencia.executeQuery(consultaSQL);
-            resultado2 = sentencia.executeQuery(Consultanumerofilas);
-            resultado2.next();
-            int i;
+      resultado = sentencia.executeQuery(consultaSql);
+      resultado2 = sentencia.executeQuery(consultanumerofilas);
+      resultado2.next();
+      int i;
 
-            for (i = 0; i < resultado2.getInt(1); i++) {
+      for (i = 0; i < resultado2.getInt(1); i++) {
 
-                if (resultado.next()) {
+        if (resultado.next()) {
 
-                    nombreProducto.add(resultado.getString(1));
-                    masvendidos.add(resultado.getInt(2));
-                    resultado.next();
-                } else {
-
-                }
-
-            }
-
-            resultadoArray.add(nombreProducto);
-            resultadoArray.add(masvendidos);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e);
-
-            JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
+          nombreProducto.add(resultado.getString(1));
+          masvendidos.add(resultado.getInt(2));
+          resultado.next();
+        } else {
 
         }
-        return resultadoArray;
+
+      }
+
+      resultadoArray.add(nombreProducto);
+      resultadoArray.add(masvendidos);
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(e);
+
+      JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
 
     }
+    return resultadoArray;
+
+  }
 
     public static ArrayList ConsultarStock() {
 
