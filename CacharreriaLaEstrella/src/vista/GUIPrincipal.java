@@ -126,7 +126,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
     private void jButtonCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCompraActionPerformed
         // TODO add your handling code here:
-        GUICompra VentanaCompra = new GUICompra();
+        GuiCompra VentanaCompra = new GuiCompra();
         VentanaCompra.setVisible(true);
         
         

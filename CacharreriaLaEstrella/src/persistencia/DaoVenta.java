@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-import vista.GUICompra;
+import vista.GuiCompra;
 import modelo.Compra;
 import modelo.Producto;
 import modelo.Venta;
