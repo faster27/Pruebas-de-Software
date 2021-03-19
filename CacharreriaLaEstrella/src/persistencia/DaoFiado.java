@@ -172,11 +172,12 @@ public class DaoFiado {
     int fiado = 0;
     // System.out.println(codigoProducto);
 
-    String Sql = "select valorfiado from ventasfiadas where (cedula=" + cedula + ")";
+    String sql;
+    sql = "select valorfiado from ventasfiadas where (cedula=" + cedula + ")";
 
     try {
 
-      resultado = sentencia.executeQuery(Sql);
+      resultado = sentencia.executeQuery(sql);
 
       if (resultado.next()) {
 
@@ -208,11 +209,12 @@ public class DaoFiado {
 
     Fiado cliente = new Fiado();
 
-    String Sql = "select * from ventasfiadas where (cedula=" + cedula + ")";
+    String sql;
+    sql = "select * from ventasfiadas where (cedula=" + cedula + ")";
 
     try {
 
-      resultado = sentencia.executeQuery(Sql);
+      resultado = sentencia.executeQuery(sql);
 
       if (resultado.next()) {
         resultado.next();
@@ -233,4 +235,4 @@ public class DaoFiado {
 
   }
 
-    }
+}
