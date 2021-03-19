@@ -6,13 +6,15 @@
 
 package vista;
 
+import persistencia.DaoInformes;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import persistencia.DaoInformes;
+
 
 
 /**.
