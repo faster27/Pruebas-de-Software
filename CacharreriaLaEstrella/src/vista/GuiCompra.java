@@ -262,7 +262,7 @@ public class GuiCompra extends javax.swing.JFrame {
     
     /**.
      * jButtonAñadirCompraProductoActionPerformed no se puede modificar
-     * @param evt 
+     * @param evt .
      */
     private void jButtonAñadirCompraProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCompraProductoActionPerformed
               // TODO add your handling code here:
@@ -329,41 +329,37 @@ public class GuiCompra extends javax.swing.JFrame {
             DaoCompra.guardarCompra(nuevaCompra);
         
         
-        int filas=jTableTablaCompras1.getRowCount();
-        int i;
+    int filas = jTableTablaCompras1.getRowCount();
+    int i;
         
-        for (i =0 ; i<filas;i++){
+    for (i = 0 ; i < filas;i++) {
                    
                                    
-            nuevaCompra.setcodigoCompra((int) jTableTablaCompras1.getValueAt(i, 0));
-            nuevaCompra.setCantidad((int) jTableTablaCompras1.getValueAt(i, 2));
-            nuevaCompra.setPrecioCompraProducto((double) jTableTablaCompras1.getValueAt(i, 3));
-            nuevaCompra.setFecha((String) jTableTablaCompras1.getValueAt(i, 4));
-            nuevaCompra.setCodigoProducto(Integer.parseInt((String) jTableTablaCompras1.getValueAt(i, 6)));
+      nuevaCompra.setcodigoCompra((int) jTableTablaCompras1.getValueAt(i, 0));
+      nuevaCompra.setCantidad((int) jTableTablaCompras1.getValueAt(i, 2));
+      nuevaCompra.setPrecioCompraProducto((double) jTableTablaCompras1.getValueAt(i, 3));
+      nuevaCompra.setFecha((String) jTableTablaCompras1.getValueAt(i, 4));
+      nuevaCompra.setCodigoProducto(Integer.parseInt((String) jTableTablaCompras1.getValueAt(i,6)));
             
-            String FechaVencimiento= (String) jTableTablaCompras1.getValueAt(i, 7);
-            String FechaAviso= (String) jTableTablaCompras1.getValueAt(i, 8);
-            double TotalVenta=(double) jTableTablaCompras1.getValueAt(i, 5);
+      String fechaVencimiento = (String) jTableTablaCompras1.getValueAt(i, 7);
+      String fechaAviso = (String) jTableTablaCompras1.getValueAt(i, 8);
+      double totalVenta = (double) jTableTablaCompras1.getValueAt(i, 5);
             
-            DaoCompra.conexion();
+      DaoCompra.conexion();
            
-            DaoCompra.guardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso,TotalVenta);
-            DaoProducto.conexion();
-            int CppActual= DaoProducto.consultarCpp(nuevaCompra.getCodigoProducto());
-            int CantidadStockActual=DaoProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
+      DaoCompra.guardarCompraProducto(nuevaCompra, fechaVencimiento, fechaAviso,totalVenta);
+      DaoProducto.conexion();
+      int cppActual = DaoProducto.consultarCpp(nuevaCompra.getCodigoProducto());
+      int cantidadstockactual = DaoProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
            
-            DaoProducto.actualizarCantidad(nuevaCompra.getCodigoProducto(), nuevaCompra.getCantidad(),1);
-            
-          
-            
-            double CppNuevo;
-            CppNuevo = Cpp.actualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
-            DaoProducto.conexion();
-            DaoProducto.actualizarCpp(nuevaCompra.getCodigoProducto(), CppNuevo);
-            
-            
-        
-        }
+      DaoProducto.actualizarCantidad(nuevaCompra.getCodigoProducto(), nuevaCompra.getCantidad(),1);
+               
+      double cppNuevo;
+      cppNuevo = Cpp.actualizarCpp(cantidadstockactual, cppActual, 
+              nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
+      DaoProducto.conexion();
+      DaoProducto.actualizarCpp(nuevaCompra.getCodigoProducto(), cppNuevo);      
+    }
     }//GEN-LAST:event_jButtonFinalizarCompraActionPerformed
 
     private void jTextField1codigoproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1codigoproductoActionPerformed
