@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import persistencia.DAOInformes;
+import persistencia.DaoInformes;
 
 
 /**
@@ -345,8 +345,8 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> ventas = new ArrayList<>();
         
-        DAOInformes.conexion();
-        Resultadoventas=DAOInformes.ConsultarInformeCategorias(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
+        DaoInformes.conexion();
+        Resultadoventas=DaoInformes.ConsultarInformeCategorias(jTextField1FechaUnoVentas.getText(), jTextField2FechaDosVentas.getText());
         
       
         
@@ -386,8 +386,8 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> Costos = new ArrayList<>();
         
-        DAOInformes.conexion();
-        ResultadoCostos=DAOInformes.ConsultarInformeCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
+        DaoInformes.conexion();
+        ResultadoCostos=DaoInformes.ConsultarInformeCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
         
       
         
@@ -424,8 +424,8 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> Compra = new ArrayList<>();
         
-        DAOInformes.conexion();
-        ResultadoCompra=DAOInformes.ConsultarInformeCompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
+        DaoInformes.conexion();
+        ResultadoCompra=DaoInformes.ConsultarInformeCompra(jTextField1FechaUnoCompras.getText(), jTextField2FechaDosCompras.getText());
         
       
         
@@ -469,8 +469,8 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<String> Categorias = new ArrayList<>();
         ArrayList<Integer> MasVendidos = new ArrayList<>();
         
-        DAOInformes.conexion();
-        ResultadoMasVendidos=DAOInformes.ConsultarInformeMasVendidos(jTextField1FechaUnoMasVendido.getText(), jTextField2FechaDosMasVendido.getText());
+        DaoInformes.conexion();
+        ResultadoMasVendidos=DaoInformes.ConsultarInformeMasVendidos(jTextField1FechaUnoMasVendido.getText(), jTextField2FechaDosMasVendido.getText());
         
       
         

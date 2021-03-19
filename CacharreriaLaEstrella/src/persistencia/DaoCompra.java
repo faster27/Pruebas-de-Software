@@ -59,11 +59,11 @@ public class DaoCompra {
     try {
 
       // ARMA LA SENTENCIA DE INSERCCION
-      String consultaSql = "INSERT INTO compra (codigocompra,"                            
+      String consultaSQL = "INSERT INTO compra (codigocompra,"                            
                                 + "fecha)"
                                 + "  VALUES (?,?)";
 
-      try (PreparedStatement ps = conexion.prepareStatement(consultaSql)) {
+      try (PreparedStatement ps = conexion.prepareStatement(consultaSQL)) {
         ps.setLong(1, compra.getcodigoCompra());
         ps.setString(2, compra.getFecha());
                
@@ -81,30 +81,30 @@ public class DaoCompra {
   /**.
    * 
    * @param compra Este es el objeto que me contiene toda la info acerca de la compra
-   * @param fechaVencimiento Esta es la fecha de vencimiento del producto
-   * @param fechaAviso Esta es la fecha de aviso cuando el producto esta proximo a vencerse
-   * @param totalCompra El resultado total de todas las compras que se relaizan en la cacharreria
+   * @param FechaVencimiento Esta es la fecha de vencimiento del producto
+   * @param FechaAviso Esta es la fecha de aviso cuando el producto esta proximo a vencerse
+   * @param TotalCompra El resultado total de todas las compras que se relaizan en la cacharreria
    */
-  public static void guardarCompraProducto(Compra compra,String fechaVencimiento,
-          String fechaAviso,double totalCompra) {
+  public static void guardarCompraProducto(Compra compra,String FechaVencimiento,
+          String FechaAviso,double TotalCompra) {
 
     try {
 
       // ARMA LA SENTENCIA DE INSERCCION
-      String consultaSql;
-      consultaSql = "INSERT INTO compraproducto "
+      String consultaSQL;
+      consultaSQL = "INSERT INTO compraproducto "
                 + "(codigoproducto,codigocompra,preciounidadcompra,"
                 + "cantidad,fechavencimiento,fechaaviso,totalcompra)"
                 + " VALUES (?,?,?,?,?,?,?)";
 
-      try (PreparedStatement ps = conexion.prepareStatement(consultaSql)) {
+      try (PreparedStatement ps = conexion.prepareStatement(consultaSQL)) {
         ps.setLong(1, compra.getCodigoProducto());
         ps.setLong(2, compra.getcodigoCompra());
         ps.setDouble(3, compra.getPrecioCompraProducto());
         ps.setLong(4, compra.getCantidad());
-        ps.setString(5, fechaVencimiento);
-        ps.setString(6, fechaAviso);
-        ps.setDouble(7, totalCompra);
+        ps.setString(5, FechaVencimiento);
+        ps.setString(6, FechaAviso);
+        ps.setDouble(7, TotalCompra);
             
             
             
