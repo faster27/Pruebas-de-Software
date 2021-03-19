@@ -10,6 +10,8 @@ package persistencia;
  *
  * @author dcorr
  */
+import modelo.Fiado;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,7 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import modelo.Fiado;
+
 
 public class DaoFiado {
 
