@@ -295,46 +295,50 @@ public class DaoInformes {
     return resultadoArray;
 
   }
+  
+  /**.
+   * 
+   * @return retorna la info de la consulta
+   */
+  public static ArrayList consultarStock() {
 
-    public static ArrayList ConsultarStock() {
+    String text;
 
-        String text;
+    ArrayList<String> nombreProductos = new ArrayList<>();
+    ArrayList<Integer> cantidadProducto = new ArrayList<>();
+    ArrayList<Object> resultadoTotal = new ArrayList<>();
 
-        ArrayList<String> NombreProductos = new ArrayList<>();
-        ArrayList<Integer> CantidadProducto = new ArrayList<>();
-        ArrayList<Object> ResultadoTotal = new ArrayList<>();
+    try {
 
-        try {
+      // ARMA LA SENTENCIA DE INSERCCION
+      String consultaSql = "select nombreproducto,cantidadproducto from productos";
+      String consultaSql2 = "SELECT COUNT(*) from productos";
 
-            // ARMA LA SENTENCIA DE INSERCCION
-            String consultaSQL = "select nombreproducto,cantidadproducto from productos";
-            String consultaSQL2 = "SELECT COUNT(*) from productos";
+      resultado = sentencia.executeQuery(consultaSql);
+      resultado2 = sentencia.executeQuery(consultaSql2);
 
-            resultado = sentencia.executeQuery(consultaSQL);
-            resultado2 = sentencia.executeQuery(consultaSQL2);
+      resultado2.next();
+      int i;
+      int tamano = resultado2.getInt(1);
 
-            resultado2.next();
-            int i;
-            int tamano = resultado2.getInt(1);
+      for (i = 0; i < tamano; i++) {
+        resultado.next();
+        nombreProductos.add(resultado.getString(1));
+        cantidadProducto.add(resultado.getInt(2));
+      }
 
-            for (i = 0; i < tamano; i++) {
-                resultado.next();
-                NombreProductos.add(resultado.getString(1));
-                CantidadProducto.add(resultado.getInt(2));
-            }
+      resultadoTotal.add(nombreProductos);
+      resultadoTotal.add(cantidadProducto);
 
-            ResultadoTotal.add(NombreProductos);
-            ResultadoTotal.add(CantidadProducto);
+    } catch (SQLException e) { 
+      e.printStackTrace();
+      System.out.println(e);
 
-        } catch (SQLException e) { 
-            e.printStackTrace();
-            System.out.println(e);
-
-            JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
-
-        }
-        return ResultadoTotal;
+      JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
 
     }
+    return resultadoTotal;
+
+  }
 
 }
