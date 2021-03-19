@@ -29,9 +29,9 @@ public class DaoInformes {
    
     
   /**.
-   * @param clave
-   * @param url
-   * @param usuario
+   * @clave
+   * @url
+   * @usuario
    */ 
   public static void conexion() {
 
