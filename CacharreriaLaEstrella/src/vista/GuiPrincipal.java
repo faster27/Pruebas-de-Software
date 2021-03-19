@@ -131,7 +131,7 @@ public class GuiPrincipal extends javax.swing.JFrame {
 
     private void jButtonProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProductosActionPerformed
         // TODO add your handling code here:
-        GUIProductos VentanaProductos = new GUIProductos();
+        GuiProductos VentanaProductos = new GuiProductos();
         VentanaProductos.setVisible(true);      
     }//GEN-LAST:event_jButtonProductosActionPerformed
 

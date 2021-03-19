@@ -16,7 +16,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Compra;
-import vista.GUIProductos;
+import vista.GuiProductos;
 import modelo.Producto;
 import static persistencia.DaoCompra.resultado;
 
