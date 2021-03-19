@@ -18,8 +18,8 @@ import vista.GUICompra;
 import modelo.Compra;
 import modelo.Producto;
 import modelo.Venta;
-import static persistencia.DAOProducto.cadenaDriver;
-import static persistencia.DAOProducto.conexion;
+import static persistencia.DaoProducto.cadenaDriver;
+import static persistencia.DaoProducto.conexion;
 
 /**.
  *

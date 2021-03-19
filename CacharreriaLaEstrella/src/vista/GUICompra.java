@@ -12,7 +12,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Compra;
 import persistencia.DaoCompra;
-import persistencia.DAOProducto;
+import persistencia.DaoProducto;
 
 /**
  *
@@ -347,18 +347,18 @@ public class GUICompra extends javax.swing.JFrame {
             DaoCompra.conexion();
            
             DaoCompra.guardarCompraProducto(nuevaCompra, FechaVencimiento, FechaAviso,TotalVenta);
-            DAOProducto.conexion();
-            int CppActual= DAOProducto.consultarCpp(nuevaCompra.getCodigoProducto());
-            int CantidadStockActual=DAOProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
+            DaoProducto.conexion();
+            int CppActual= DaoProducto.consultarCpp(nuevaCompra.getCodigoProducto());
+            int CantidadStockActual=DaoProducto.consultarCantidad(nuevaCompra.getCodigoProducto());
            
-            DAOProducto.ActualizarCantidad(nuevaCompra.getCodigoProducto(), nuevaCompra.getCantidad(),1);
+            DaoProducto.actualizarCantidad(nuevaCompra.getCodigoProducto(), nuevaCompra.getCantidad(),1);
             
           
             
             double CppNuevo;
             CppNuevo = Cpp.actualizarCpp(CantidadStockActual, CppActual, nuevaCompra.getCantidad(),nuevaCompra.getPrecioCompraProducto());
-            DAOProducto.conexion();
-            DAOProducto.ActualizarCpp(nuevaCompra.getCodigoProducto(), CppNuevo);
+            DaoProducto.conexion();
+            DaoProducto.actualizarCpp(nuevaCompra.getCodigoProducto(), CppNuevo);
             
             
         

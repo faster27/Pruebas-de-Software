@@ -11,7 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
 import modelo.Venta;
-import persistencia.DAOProducto;
+import persistencia.DaoProducto;
 import persistencia.DaoVenta;
 
 /**
@@ -236,14 +236,14 @@ public class GUIVentas extends javax.swing.JFrame {
             nuevaVenta.setFecha((String) jTableTablaProductos1.getValueAt(i, 4));
             nuevaVenta.setTotalventa((double) jTableTablaProductos1.getValueAt(i, 6));
             
-            DAOProducto.conexion();
-            double cpp=DAOProducto.consultarCpp(nuevaVenta.getCodigoproducto());
+            DaoProducto.conexion();
+            double cpp=DaoProducto.consultarCpp(nuevaVenta.getCodigoproducto());
             double costoCpp= nuevaVenta.getCantidadProducto()* cpp;
 
             DaoVenta.conexion();
             DaoVenta.guardarVentaProducto(nuevaVenta, costoCpp );
-            DAOProducto.conexion();
-            DAOProducto.ActualizarCantidad(nuevaVenta.getCodigoproducto(), nuevaVenta.getCantidadProducto(),0);
+            DaoProducto.conexion();
+            DaoProducto.actualizarCantidad(nuevaVenta.getCodigoproducto(), nuevaVenta.getCantidadProducto(),0);
 
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3VenderActionPerformed
