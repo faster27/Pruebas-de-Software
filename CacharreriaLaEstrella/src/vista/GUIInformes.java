@@ -470,7 +470,7 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<Integer> MasVendidos = new ArrayList<>();
         
         DaoInformes.conexion();
-        ResultadoMasVendidos=DaoInformes.ConsultarInformeMasVendidos(jTextField1FechaUnoMasVendido.getText(), jTextField2FechaDosMasVendido.getText());
+        ResultadoMasVendidos=DaoInformes.consultarinformemasvendidos(jTextField1FechaUnoMasVendido.getText(), jTextField2FechaDosMasVendido.getText());
         
       
         

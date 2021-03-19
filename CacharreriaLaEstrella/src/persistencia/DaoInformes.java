@@ -233,20 +233,26 @@ public class DaoInformes {
     return resultadoArray;
 
   }
+  
+  /**.
+   * 
+   * @param fecha1 fecha desde donde se va a consultar
+   * @param fecha2 fecha hasta la cual se consulta
+   * @return  retorna toda la info regresada por la consulta
+   */
+  public static ArrayList consultarinformemasvendidos(String fecha1, String fecha2) {
 
-    public static ArrayList ConsultarInformeMasVendidos(String fecha1, String fecha2) {
+    String text;
 
-        String text;
+    ArrayList<Integer> masvendidos = new ArrayList<>();
+    ArrayList<String> nombreProducto = new ArrayList<>();
+    ArrayList<Object> resultadoArray = new ArrayList<>();
 
-        ArrayList<Integer> MasVendidos = new ArrayList<>();
-        ArrayList<String> NombreProducto = new ArrayList<>();
-        ArrayList<Object> Resultado = new ArrayList<>();
+    try {
 
-        try {
-
-            // ARMA LA SENTENCIA DE INSERCCION
-            String Consultanumerofilas = "SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
-            String consultaSQL = "SELECT productos.nombreproducto, SUM(ventaproducto.cantidad) as TotalCategoria "
+      // ARMA LA SENTENCIA DE INSERCCION
+      String Consultanumerofilas = "SELECT Count(*) FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
+      String consultaSQL = "SELECT productos.nombreproducto, SUM(ventaproducto.cantidad) as TotalCategoria "
                     + "FROM productos INNER JOIN ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN "
                     + "venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha "
                     + "between'" + fecha1 + "' and '" + fecha2 + "' group by productos.nombreproducto order by TotalCategoria desc";
@@ -260,8 +266,8 @@ public class DaoInformes {
 
                 if (resultado.next()) {
 
-                    NombreProducto.add(resultado.getString(1));
-                    MasVendidos.add(resultado.getInt(2));
+                    nombreProducto.add(resultado.getString(1));
+                    masvendidos.add(resultado.getInt(2));
                     resultado.next();
                 } else {
 
@@ -269,8 +275,8 @@ public class DaoInformes {
 
             }
 
-            Resultado.add(NombreProducto);
-            Resultado.add(MasVendidos);
+            resultadoArray.add(nombreProducto);
+            resultadoArray.add(masvendidos);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -279,7 +285,7 @@ public class DaoInformes {
             JOptionPane.showMessageDialog(null, "Reporte generado con exito ");
 
         }
-        return Resultado;
+        return resultadoArray;
 
     }
 
