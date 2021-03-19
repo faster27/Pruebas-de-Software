@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
 import modelo.Venta;
 import persistencia.DAOProducto;
-import persistencia.DAOVenta;
+import persistencia.DaoVenta;
 
 /**
  *
@@ -222,8 +222,8 @@ public class GUIVentas extends javax.swing.JFrame {
         nuevaVenta.setFecha((String) jTableTablaProductos1.getValueAt(0, 4));
         nuevaVenta.setTotalventa((double) jTableTablaProductos1.getValueAt(0, 6));
 
-        DAOVenta.conexion();
-        DAOVenta.GuardarVenta(nuevaVenta);
+        DaoVenta.conexion();
+        DaoVenta.guardarVenta(nuevaVenta);
 
         int filas=jTableTablaProductos1.getRowCount();
         int i;
@@ -240,8 +240,8 @@ public class GUIVentas extends javax.swing.JFrame {
             double cpp=DAOProducto.consultarCpp(nuevaVenta.getCodigoproducto());
             double costoCpp= nuevaVenta.getCantidadProducto()* cpp;
 
-            DAOVenta.conexion();
-            DAOVenta.GuardarVentaProducto(nuevaVenta, costoCpp );
+            DaoVenta.conexion();
+            DaoVenta.guardarVentaProducto(nuevaVenta, costoCpp );
             DAOProducto.conexion();
             DAOProducto.ActualizarCantidad(nuevaVenta.getCodigoproducto(), nuevaVenta.getCantidadProducto(),0);
 
