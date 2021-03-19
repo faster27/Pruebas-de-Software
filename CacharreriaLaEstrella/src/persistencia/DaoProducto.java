@@ -7,6 +7,12 @@
 
 package persistencia;
 
+import static persistencia.DaoCompra.resultado;
+
+import modelo.Compra;
+import modelo.Producto;
+import vista.GuiProductos;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,10 +21,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import modelo.Compra;
-import vista.GuiProductos;
-import modelo.Producto;
-import static persistencia.DaoCompra.resultado;
 
 /**.
  *
