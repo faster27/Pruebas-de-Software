@@ -6,10 +6,12 @@
 
 package vista;
 
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import modelo.Fiado;
 import persistencia.DaoFiado;
+
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 /**.
  *
