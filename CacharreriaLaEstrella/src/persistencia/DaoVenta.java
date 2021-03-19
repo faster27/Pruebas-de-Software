@@ -43,7 +43,7 @@ public class DaoVenta {
       conexion = DriverManager.getConnection(url, usuario, clave);
       sentencia = conexion.createStatement();
 
-    } catch (Exception e) {
+    } catch (ClassNotFoundException | SQLException e) {
       //TODO: HANDLE EXCEPTION
       JOptionPane.showMessageDialog(null, "error al conectar" + e);
 
