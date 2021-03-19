@@ -387,7 +387,7 @@ public class GUIInformes extends javax.swing.JFrame {
         ArrayList<Integer> Costos = new ArrayList<>();
         
         DaoInformes.conexion();
-        ResultadoCostos=DaoInformes.ConsultarInformeCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
+        ResultadoCostos=DaoInformes.consultarInformeCostos(jTextField1FechaUnoCostos.getText(), jTextField2FechaDosCostos.getText());
         
       
         
