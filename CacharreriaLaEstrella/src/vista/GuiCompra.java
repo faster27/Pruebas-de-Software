@@ -268,9 +268,9 @@ public class GuiCompra extends javax.swing.JFrame {
     private void jButtonAñadirCompraProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCompraProductoActionPerformed
               // TODO add your handling code here:
         
-              if ( jTextField1CodigoCompra.getText().isEmpty() ||
-              jTextField4NombreProducto.getText().isEmpty() ||
-              jTextField3Cantidad.getText().isEmpty() ||
+              if ( jTextField1CodigoCompra.getText().isEmpty() 
+              || jTextField4NombreProducto.getText().isEmpty() 
+              ||jTextField3Cantidad.getText().isEmpty() ||
               jTextField2PrecioDeCompra.getText().isEmpty() ||
               jTextFieldFecha.getText().isEmpty() ||
               jTextField1codigoproducto.getText().isEmpty() ||
@@ -457,7 +457,7 @@ public class GuiCompra extends javax.swing.JFrame {
   * @param args the command line arguments
   */
     
-  public static void main(String args[]) {
+  public static void main(String []args) {
     /* Set the Nimbus look and feel */
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
