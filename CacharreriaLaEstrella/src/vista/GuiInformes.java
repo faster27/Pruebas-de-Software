@@ -679,40 +679,44 @@ public class GuiInformes extends javax.swing.JFrame {
     }
   }
     
-    private void guardarTablaCompra(String fecha1, String fecha2) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            try {
+  private void guardarTablaCompra(String fecha1, String fecha2) {
+       
+    try {
 
-            String sucursalesCSVFile = "src/Informe de compra.txt";
-            BufferedWriter bfw = new BufferedWriter(new FileWriter(sucursalesCSVFile ));
-            bfw.write("Informe de compra "+fecha1+" hasta "+fecha2+"");
-            bfw.write("\n");
-            bfw.write("\n");
-            bfw.write("Nombre del producto     |     Total compra");
-            bfw.write("\n");
-            for (int i = 0 ; i < jTable1InformeCompras.getRowCount(); i++) //realiza un barrido por filas.
-            {
-                for(int j = 0 ; j < jTable1InformeCompras.getColumnCount();j++) //realiza un barrido por columnas.
-                {
-                    bfw.write(String.valueOf(jTable1InformeCompras.getValueAt(i,j)));
-                    if (j < jTable1InformeCompras.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
-                        bfw.write("          |          ");
-                    }else{
-                    bfw.write(".");
-                    }
-                }
-                bfw.newLine(); //inserta nueva linea.
-            }
-
-            bfw.close(); //cierra archivo!
-            System.out.println("El archivo fue salvado correctamente!");
-        } catch (IOException e) {
-            System.out.println("ERROR: Ocurrio un problema al salvar el archivo!" + e.getMessage());
+      String sucursalesCSVFile = "src/Informe de compra.txt";
+      BufferedWriter bfw = new BufferedWriter(new FileWriter(sucursalesCSVFile ));
+      bfw.write("Informe de compra "+fecha1+" hasta "+fecha2+"");
+      bfw.write("\n");
+      bfw.write("\n");
+      bfw.write("Nombre del producto     |     Total compra");
+      bfw.write("\n");
+      for (int i = 0 ; i < jTable1InformeCompras.getRowCount(); i++) { 
+        //realiza un barrido por filas.
+            
+        for (int j = 0 ; j < jTable1InformeCompras.getColumnCount();j++) {
+          //realiza un barrido por columnas.
+                
+          bfw.write(String.valueOf(jTable1InformeCompras.getValueAt(i,j)));
+          if (j < jTable1InformeCompras.getColumnCount() - 1) { 
+            //agrega separador "," si no es el ultimo elemento de la fila.
+            bfw.write("          |          ");
+          } else {
+            bfw.write(".");
+          }
         }
+        bfw.newLine(); //inserta nueva linea.
+      }
+
+      bfw.close(); //cierra archivo!
+      System.out.println("El archivo fue salvado correctamente!");
+    } catch (IOException e) {
+      System.out.println("ERROR: Ocurrio un problema al salvar el archivo!" + e.getMessage());
     }
+  }
   /**.
   * @param args the command line arguments
   */
+  
   public static void main(String []args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
