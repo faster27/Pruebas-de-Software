@@ -5,6 +5,10 @@
  */
 package persistencia;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import modelo.Compra;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -30,12 +34,18 @@ public class DaoCompraTest {
         compra.setCodigoProducto(123);
         compra.setFecha("23/03/2021");
         compra.setPrecioCompraProducto(3000);
-        compra.setcodigoCompra(300);
+        compra.setcodigoCompra(200);
     }
     
     @AfterClass
-    public static void tearDownClass() {
+    public static void tearDownClass() throws SQLException {
         
+      Statement   stmt =DaoCompra.conexion.createStatement();
+      stmt.executeUpdate("delete from compraproducto where codigocompra="+compra.getcodigoCompra()+"");
+      
+      Statement   stmt2 =DaoCompra.conexion.createStatement();
+      stmt2.executeUpdate("delete from compra where codigocompra="+compra.getcodigoCompra()+"");
+     
     }
     
     @Before
