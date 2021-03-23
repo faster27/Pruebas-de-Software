@@ -88,20 +88,20 @@ public class DaoVenta {
   public static void guardarVentaProducto(Venta nuevaVenta, double costoCpp) {
 
     try {
-
+      conexion();
       // ARMA LA SENTENCIA DE INSERCCION
       String consultaSql = "INSERT INTO ventaproducto (codigoventa,codigoproducto,"
               + "cantidad,totalventaproducto,cppcostos)"
               + " VALUES (?,?,?,?,?)";
 
-        try (PreparedStatement ps = conexion.prepareStatement(consultaSql)) {
+            PreparedStatement ps = conexion.prepareStatement(consultaSql);
             ps.setLong(1, nuevaVenta.getCodigoventa());
             ps.setLong(2, nuevaVenta.getCodigoproducto());
             ps.setLong(3, nuevaVenta.getCantidadProducto());
             ps.setDouble(4, nuevaVenta.getTotalventa());
             ps.setDouble(5, costoCpp);
             ps.executeQuery();
-        }
+        
 
     } catch (SQLException e) {
 
