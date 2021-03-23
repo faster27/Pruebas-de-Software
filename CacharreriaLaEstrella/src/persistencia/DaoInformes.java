@@ -189,7 +189,7 @@ public class DaoInformes {
     ArrayList<Object> resultadoArray = new ArrayList<>();
 
     try {
-
+       conexion();
       // ARMA LA SENTENCIA DE INSERCCION
       String consultanumerofilas;
       consultanumerofilas = "SELECT Count(*) FROM productos "
@@ -259,7 +259,7 @@ public class DaoInformes {
                 + "where venta.fecha between'" + fecha1 + "'and'" + fecha2 + "'";
       String consultaSql;
       consultaSql = "SELECT productos.nombreproducto, SUM(ventaproducto.cantidad) as TotalCategoria"
-                + "FROM productos INNER JOIN "
+                + " FROM productos INNER JOIN "
                 + "ventaproducto ON productos.codigo = ventaproducto.codigoproducto INNER JOIN "
                 + "venta on ventaproducto.codigoventa = venta.codigoventa where venta.fecha "
                 + "between'" + fecha1 + "' and '" + fecha2 + "' group by productos.nombreproducto "
