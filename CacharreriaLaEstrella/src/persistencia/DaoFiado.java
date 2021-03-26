@@ -237,4 +237,12 @@ public class DaoFiado {
 
   }
 
+    static void consultarFiado(Fiado fiado, double cantidadf) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void consultarFiado(Fiado fiado, double cantidadf) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
