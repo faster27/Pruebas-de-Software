@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  * @author dcorr
  */
 public class DaoVentaTest {
-    static Venta venta= new Venta();
+    static Venta venta = new Venta();
     
     public DaoVentaTest() {
     }
