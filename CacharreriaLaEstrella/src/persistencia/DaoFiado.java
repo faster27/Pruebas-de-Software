@@ -171,6 +171,7 @@ public class DaoFiado {
  */
   
   public static int consultarFiado(int cedula) {
+      conexion();
     int fiado = 0;
     // System.out.println(codigoProducto);
 
