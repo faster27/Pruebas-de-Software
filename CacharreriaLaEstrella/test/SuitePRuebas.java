@@ -16,8 +16,11 @@ import org.junit.runners.Suite;
  * @author dcorr
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Logica.CppTest.class,persistencia.DaoCompraTest.class, persistencia.DaoInformesTest.class,
-    persistencia.DaoVentaTest.class, persistencia.DaoFiadoTest.class})
+@Suite.SuiteClasses({Logica.CppTest.class,
+    persistencia.DaoCompraTest.class, 
+    persistencia.DaoInformesTest.class,
+    persistencia.DaoVentaTest.class, 
+    persistencia.DaoFiadoTest.class})
 public class SuitePRuebas {
 
     @BeforeClass
